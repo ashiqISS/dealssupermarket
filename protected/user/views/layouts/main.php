@@ -201,7 +201,7 @@
                                                                                 <span class="caret"></span></button>
                                                                         <ul class="dropdown-menu tt">
                                                                                 <?php if (isset(Yii::app()->session['user'])) { ?>
-                                                                                        <li>Hi  <b><?php echo (Yii::app()->session['user']->first_name), array('class' => 'sign'); ?></b> | </li>
+                                                                                        <li>Hi  <b><a href="<?php echo Yii::app()->baseUrl; ?>/Myaccount"><?php echo (Yii::app()->session['user']->first_name), array('class' => 'sign'); ?></a></b> | </li>
                                                                                         <li><?php echo CHtml::link('Log Out', array('site/Logout'), array('class' => 'register')); ?></li>
                                                                                         <?php
                                                                                 } else {
@@ -378,7 +378,7 @@
                                                 <div class="col-md-2 col-xs-12">
                                                         <ul class="list-inline">
                                                                 <?php if (isset(Yii::app()->session['user'])) { ?>
-                                                                        <li>Hi  <b><?php echo Yii::app()->session['user']->first_name; ?></b> | </li>
+                                                                        <li>Hi  <b><a href="<?php echo Yii::app()->baseUrl; ?>/Myaccount"><?php echo Yii::app()->session['user']->first_name; ?></a></b> | </li>
                                                                         <li><?php echo CHtml::link('Log Out', array('site/Logout')); ?></li>
                                                                         <?php
                                                                 } else {

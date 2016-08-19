@@ -1,13 +1,13 @@
 <div class="col-md-4 sidebar hidden-xs">
 
         <ul>
-                <li><a href="myaccount.php">My Account</a></li>
-                <li><a href="password.php">Password</a></li>
-                <li><a href="address.php">Address Book</a></li>
-                <li><a href="wishlist.php">Wish List</a></li>
-                <li><a href="order-history.php">Order History</a></li>
-                <li><a href="newsletter.php">Newsletter</a></li>
-                <li><a href="logout.php">Logout</a></li>
+                <li><?php echo CHtml::link('My Profile', array('Myaccount/Profile')); ?></li>
+                <li><?php echo CHtml::link('Change Password', array('Myaccount/Changepassword')); ?></li>
+                <li><?php echo CHtml::link('Address Book', array('Myaccount/Addressbook')); ?></li>
+                <li><?php echo CHtml::link('My Wishlist', array('Myaccount/Mywishlists')); ?></li>
+                <li><?php echo CHtml::link('My Orders', array('Myaccount/Myorders')); ?></li>
+                <li><?php echo CHtml::link('Newsletter', array('Myaccount/Newsletter')); ?></li>
+                <li><?php echo CHtml::link('Logout', array('site/Logout')); ?></li>
 
         </ul>
 

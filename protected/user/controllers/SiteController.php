@@ -178,9 +178,8 @@ class SiteController extends Controller {
                                                 Yii::app()->session['user'] = $modell;
                                                 $newDate = date("Y-m-d H:i:s");
                                                 $modell->last_login = $newDate;
-                                                if ($modell->save()) {
-                                                        $this->redirect(Yii::app()->request->baseUrl . '/index.php/Myaccount');
-                                                }
+                                                $modell->save();
+                                                $this->redirect(Yii::app()->request->baseUrl . '/index.php/Myaccount');
                                         }
                                 } else {
 
