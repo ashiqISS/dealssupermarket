@@ -34375,3 +34375,442 @@ Stack trace:
 REQUEST_URI=/deals_supermarket/admin.php/catalog/products/update/id/pps/www/deals_supermarket/protected/admin/extensions/eckeditor/ECKEdit5.phpckeditor.js?t=B8DJ5M3
 HTTP_REFERER=http://localhost/deals_supermarket/admin.php/catalog/products/update/id/1
 ---
+2016/08/19 18:43:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in D:\Ampps\www\dealssupermarket\protected\admin\modules\catalog\controllers\ProductsController.php:500
+Stack trace:
+#0 D:\Ampps\www\dealssupermarket\protected\admin\modules\catalog\controllers\ProductsController.php(194): ProductsController->loadModel('mpps')
+#1 [internal function]: ProductsController->actionUpdate('mpps')
+#2 D:\Ampps\www\dealssupermarket\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ProductsController), Array)
+#3 D:\Ampps\www\dealssupermarket\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ProductsController), Object(ReflectionMethod), Array)
+#4 D:\Ampps\www\dealssupermarket\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 D:\Ampps\www\dealssupermarket\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 D:\Ampps\www\dealssupermarket\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 D:\Ampps\www\dealssupermarket\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 D:\Ampps\www\dealssupermarket\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 D:\Ampps\www\dealssupermarket\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 D:\Ampps\www\dealssupermarket\framework\web\CController.php(291): CFilterChain->run()
+#11 D:\Ampps\www\dealssupermarket\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\Ampps\www\dealssupermarket\framework\web\CWebApplication.php(282): CController->run('update')
+#13 D:\Ampps\www\dealssupermarket\framework\web\CWebApplication.php(141): CWebApplication->runController('catalog/product...')
+#14 D:\Ampps\www\dealssupermarket\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 D:\Ampps\www\dealssupermarket\admin.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/dealssupermarket/admin.php/catalog/products/update/id/mpps/www/dealssupermarket/protected/admin/extensions/eckeditor/ECKEdit5.phpckeditor.js?t=B8DJ5M3
+HTTP_REFERER=http://localhost/dealssupermarket/admin.php/catalog/products/update/id/4
+---
+2016/08/19 18:43:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in D:\Ampps\www\dealssupermarket\protected\admin\modules\catalog\controllers\ProductsController.php:500
+Stack trace:
+#0 D:\Ampps\www\dealssupermarket\protected\admin\modules\catalog\controllers\ProductsController.php(194): ProductsController->loadModel('mpps')
+#1 [internal function]: ProductsController->actionUpdate('mpps')
+#2 D:\Ampps\www\dealssupermarket\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ProductsController), Array)
+#3 D:\Ampps\www\dealssupermarket\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ProductsController), Object(ReflectionMethod), Array)
+#4 D:\Ampps\www\dealssupermarket\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 D:\Ampps\www\dealssupermarket\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 D:\Ampps\www\dealssupermarket\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 D:\Ampps\www\dealssupermarket\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 D:\Ampps\www\dealssupermarket\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 D:\Ampps\www\dealssupermarket\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 D:\Ampps\www\dealssupermarket\framework\web\CController.php(291): CFilterChain->run()
+#11 D:\Ampps\www\dealssupermarket\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\Ampps\www\dealssupermarket\framework\web\CWebApplication.php(282): CController->run('update')
+#13 D:\Ampps\www\dealssupermarket\framework\web\CWebApplication.php(141): CWebApplication->runController('catalog/product...')
+#14 D:\Ampps\www\dealssupermarket\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 D:\Ampps\www\dealssupermarket\admin.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/dealssupermarket/admin.php/catalog/products/update/id/mpps/www/dealssupermarket/protected/admin/extensions/eckeditor/ECKEdit5.phpckeditor.js?t=B8DJ5M3
+HTTP_REFERER=http://localhost/dealssupermarket/admin.php/catalog/products/update/id/4
+---
+2016/08/19 18:43:51 [warning] [application] Failed to set unsafe attribute "main_image" of "Products".
+in D:\Ampps\www\dealssupermarket\protected\admin\modules\catalog\controllers\ProductsController.php (214)
+in D:\Ampps\www\dealssupermarket\admin.php (13)
+2016/08/19 18:43:51 [warning] [application] Failed to set unsafe attribute "hover_image" of "Products".
+in D:\Ampps\www\dealssupermarket\protected\admin\modules\catalog\controllers\ProductsController.php (214)
+in D:\Ampps\www\dealssupermarket\admin.php (13)
+2016/08/19 18:43:51 [warning] [application] Failed to set unsafe attribute "stock_availability" of "Products".
+in D:\Ampps\www\dealssupermarket\protected\admin\modules\catalog\controllers\ProductsController.php (214)
+in D:\Ampps\www\dealssupermarket\admin.php (13)
+2016/08/19 18:43:51 [warning] [application] Failed to set unsafe attribute "new_from" of "Products".
+in D:\Ampps\www\dealssupermarket\protected\admin\modules\catalog\controllers\ProductsController.php (214)
+in D:\Ampps\www\dealssupermarket\admin.php (13)
+2016/08/19 18:43:51 [warning] [application] Failed to set unsafe attribute "new_to" of "Products".
+in D:\Ampps\www\dealssupermarket\protected\admin\modules\catalog\controllers\ProductsController.php (214)
+in D:\Ampps\www\dealssupermarket\admin.php (13)
+2016/08/19 18:43:51 [warning] [application] Failed to set unsafe attribute "sale_from" of "Products".
+in D:\Ampps\www\dealssupermarket\protected\admin\modules\catalog\controllers\ProductsController.php (214)
+in D:\Ampps\www\dealssupermarket\admin.php (13)
+2016/08/19 18:43:51 [warning] [application] Failed to set unsafe attribute "sale_to" of "Products".
+in D:\Ampps\www\dealssupermarket\protected\admin\modules\catalog\controllers\ProductsController.php (214)
+in D:\Ampps\www\dealssupermarket\admin.php (13)
+2016/08/19 18:43:51 [warning] [application] Failed to set unsafe attribute "special_price_from" of "Products".
+in D:\Ampps\www\dealssupermarket\protected\admin\modules\catalog\controllers\ProductsController.php (214)
+in D:\Ampps\www\dealssupermarket\admin.php (13)
+2016/08/19 18:43:51 [warning] [application] Failed to set unsafe attribute "special_price_to" of "Products".
+in D:\Ampps\www\dealssupermarket\protected\admin\modules\catalog\controllers\ProductsController.php (214)
+in D:\Ampps\www\dealssupermarket\admin.php (13)
+2016/08/19 18:43:51 [warning] [application] Failed to set unsafe attribute "tax" of "Products".
+in D:\Ampps\www\dealssupermarket\protected\admin\modules\catalog\controllers\ProductsController.php (214)
+in D:\Ampps\www\dealssupermarket\admin.php (13)
+2016/08/19 18:43:51 [warning] [application] Failed to set unsafe attribute "gift_option" of "Products".
+in D:\Ampps\www\dealssupermarket\protected\admin\modules\catalog\controllers\ProductsController.php (214)
+in D:\Ampps\www\dealssupermarket\admin.php (13)
+2016/08/19 18:43:51 [warning] [application] Failed to set unsafe attribute "search_tag" of "Products".
+in D:\Ampps\www\dealssupermarket\protected\admin\modules\catalog\controllers\ProductsController.php (214)
+in D:\Ampps\www\dealssupermarket\admin.php (13)
+2016/08/19 18:44:43 [warning] [application] Failed to set unsafe attribute "main_image" of "Products".
+in D:\Ampps\www\dealssupermarket\protected\admin\modules\catalog\controllers\ProductsController.php (214)
+in D:\Ampps\www\dealssupermarket\admin.php (13)
+2016/08/19 18:44:43 [warning] [application] Failed to set unsafe attribute "hover_image" of "Products".
+in D:\Ampps\www\dealssupermarket\protected\admin\modules\catalog\controllers\ProductsController.php (214)
+in D:\Ampps\www\dealssupermarket\admin.php (13)
+2016/08/19 18:44:43 [warning] [application] Failed to set unsafe attribute "stock_availability" of "Products".
+in D:\Ampps\www\dealssupermarket\protected\admin\modules\catalog\controllers\ProductsController.php (214)
+in D:\Ampps\www\dealssupermarket\admin.php (13)
+2016/08/19 18:44:43 [warning] [application] Failed to set unsafe attribute "new_from" of "Products".
+in D:\Ampps\www\dealssupermarket\protected\admin\modules\catalog\controllers\ProductsController.php (214)
+in D:\Ampps\www\dealssupermarket\admin.php (13)
+2016/08/19 18:44:43 [warning] [application] Failed to set unsafe attribute "new_to" of "Products".
+in D:\Ampps\www\dealssupermarket\protected\admin\modules\catalog\controllers\ProductsController.php (214)
+in D:\Ampps\www\dealssupermarket\admin.php (13)
+2016/08/19 18:44:43 [warning] [application] Failed to set unsafe attribute "sale_from" of "Products".
+in D:\Ampps\www\dealssupermarket\protected\admin\modules\catalog\controllers\ProductsController.php (214)
+in D:\Ampps\www\dealssupermarket\admin.php (13)
+2016/08/19 18:44:43 [warning] [application] Failed to set unsafe attribute "sale_to" of "Products".
+in D:\Ampps\www\dealssupermarket\protected\admin\modules\catalog\controllers\ProductsController.php (214)
+in D:\Ampps\www\dealssupermarket\admin.php (13)
+2016/08/19 18:44:43 [warning] [application] Failed to set unsafe attribute "special_price_from" of "Products".
+in D:\Ampps\www\dealssupermarket\protected\admin\modules\catalog\controllers\ProductsController.php (214)
+in D:\Ampps\www\dealssupermarket\admin.php (13)
+2016/08/19 18:44:43 [warning] [application] Failed to set unsafe attribute "special_price_to" of "Products".
+in D:\Ampps\www\dealssupermarket\protected\admin\modules\catalog\controllers\ProductsController.php (214)
+in D:\Ampps\www\dealssupermarket\admin.php (13)
+2016/08/19 18:44:43 [warning] [application] Failed to set unsafe attribute "tax" of "Products".
+in D:\Ampps\www\dealssupermarket\protected\admin\modules\catalog\controllers\ProductsController.php (214)
+in D:\Ampps\www\dealssupermarket\admin.php (13)
+2016/08/19 18:44:43 [warning] [application] Failed to set unsafe attribute "gift_option" of "Products".
+in D:\Ampps\www\dealssupermarket\protected\admin\modules\catalog\controllers\ProductsController.php (214)
+in D:\Ampps\www\dealssupermarket\admin.php (13)
+2016/08/19 18:44:43 [warning] [application] Failed to set unsafe attribute "search_tag" of "Products".
+in D:\Ampps\www\dealssupermarket\protected\admin\modules\catalog\controllers\ProductsController.php (214)
+in D:\Ampps\www\dealssupermarket\admin.php (13)
+2016/08/19 18:44:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in D:\Ampps\www\dealssupermarket\protected\admin\modules\catalog\controllers\ProductsController.php:499
+Stack trace:
+#0 D:\Ampps\www\dealssupermarket\protected\admin\modules\catalog\controllers\ProductsController.php(194): ProductsController->loadModel('mpps')
+#1 [internal function]: ProductsController->actionUpdate('mpps')
+#2 D:\Ampps\www\dealssupermarket\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ProductsController), Array)
+#3 D:\Ampps\www\dealssupermarket\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ProductsController), Object(ReflectionMethod), Array)
+#4 D:\Ampps\www\dealssupermarket\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 D:\Ampps\www\dealssupermarket\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 D:\Ampps\www\dealssupermarket\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 D:\Ampps\www\dealssupermarket\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 D:\Ampps\www\dealssupermarket\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 D:\Ampps\www\dealssupermarket\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 D:\Ampps\www\dealssupermarket\framework\web\CController.php(291): CFilterChain->run()
+#11 D:\Ampps\www\dealssupermarket\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\Ampps\www\dealssupermarket\framework\web\CWebApplication.php(282): CController->run('update')
+#13 D:\Ampps\www\dealssupermarket\framework\web\CWebApplication.php(141): CWebApplication->runController('catalog/product...')
+#14 D:\Ampps\www\dealssupermarket\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 D:\Ampps\www\dealssupermarket\admin.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/dealssupermarket/admin.php/catalog/products/update/id/mpps/www/dealssupermarket/protected/admin/extensions/eckeditor/ECKEdit5.phpckeditor.js?t=B8DJ5M3
+HTTP_REFERER=http://localhost/dealssupermarket/admin.php/catalog/products/update/id/4
+---
+2016/08/19 18:44:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in D:\Ampps\www\dealssupermarket\protected\admin\modules\catalog\controllers\ProductsController.php:499
+Stack trace:
+#0 D:\Ampps\www\dealssupermarket\protected\admin\modules\catalog\controllers\ProductsController.php(194): ProductsController->loadModel('mpps')
+#1 [internal function]: ProductsController->actionUpdate('mpps')
+#2 D:\Ampps\www\dealssupermarket\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ProductsController), Array)
+#3 D:\Ampps\www\dealssupermarket\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ProductsController), Object(ReflectionMethod), Array)
+#4 D:\Ampps\www\dealssupermarket\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 D:\Ampps\www\dealssupermarket\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 D:\Ampps\www\dealssupermarket\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 D:\Ampps\www\dealssupermarket\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 D:\Ampps\www\dealssupermarket\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 D:\Ampps\www\dealssupermarket\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 D:\Ampps\www\dealssupermarket\framework\web\CController.php(291): CFilterChain->run()
+#11 D:\Ampps\www\dealssupermarket\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\Ampps\www\dealssupermarket\framework\web\CWebApplication.php(282): CController->run('update')
+#13 D:\Ampps\www\dealssupermarket\framework\web\CWebApplication.php(141): CWebApplication->runController('catalog/product...')
+#14 D:\Ampps\www\dealssupermarket\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 D:\Ampps\www\dealssupermarket\admin.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/dealssupermarket/admin.php/catalog/products/update/id/mpps/www/dealssupermarket/protected/admin/extensions/eckeditor/ECKEdit5.phpckeditor.js?t=B8DJ5M3
+HTTP_REFERER=http://localhost/dealssupermarket/admin.php/catalog/products/update/id/4
+---
+2016/08/19 18:45:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in D:\Ampps\www\dealssupermarket\protected\admin\modules\catalog\controllers\ProductsController.php:499
+Stack trace:
+#0 D:\Ampps\www\dealssupermarket\protected\admin\modules\catalog\controllers\ProductsController.php(194): ProductsController->loadModel('mpps')
+#1 [internal function]: ProductsController->actionUpdate('mpps')
+#2 D:\Ampps\www\dealssupermarket\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ProductsController), Array)
+#3 D:\Ampps\www\dealssupermarket\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ProductsController), Object(ReflectionMethod), Array)
+#4 D:\Ampps\www\dealssupermarket\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 D:\Ampps\www\dealssupermarket\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 D:\Ampps\www\dealssupermarket\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 D:\Ampps\www\dealssupermarket\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 D:\Ampps\www\dealssupermarket\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 D:\Ampps\www\dealssupermarket\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 D:\Ampps\www\dealssupermarket\framework\web\CController.php(291): CFilterChain->run()
+#11 D:\Ampps\www\dealssupermarket\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\Ampps\www\dealssupermarket\framework\web\CWebApplication.php(282): CController->run('update')
+#13 D:\Ampps\www\dealssupermarket\framework\web\CWebApplication.php(141): CWebApplication->runController('catalog/product...')
+#14 D:\Ampps\www\dealssupermarket\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 D:\Ampps\www\dealssupermarket\admin.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/dealssupermarket/admin.php/catalog/products/update/id/mpps/www/dealssupermarket/protected/admin/extensions/eckeditor/ECKEdit5.phpckeditor.js?t=B8DJ5M3
+HTTP_REFERER=http://localhost/dealssupermarket/admin.php/catalog/products/update/id/4
+---
+2016/08/19 18:45:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in D:\Ampps\www\dealssupermarket\protected\admin\modules\catalog\controllers\ProductsController.php:499
+Stack trace:
+#0 D:\Ampps\www\dealssupermarket\protected\admin\modules\catalog\controllers\ProductsController.php(194): ProductsController->loadModel('mpps')
+#1 [internal function]: ProductsController->actionUpdate('mpps')
+#2 D:\Ampps\www\dealssupermarket\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ProductsController), Array)
+#3 D:\Ampps\www\dealssupermarket\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ProductsController), Object(ReflectionMethod), Array)
+#4 D:\Ampps\www\dealssupermarket\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 D:\Ampps\www\dealssupermarket\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 D:\Ampps\www\dealssupermarket\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 D:\Ampps\www\dealssupermarket\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 D:\Ampps\www\dealssupermarket\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 D:\Ampps\www\dealssupermarket\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 D:\Ampps\www\dealssupermarket\framework\web\CController.php(291): CFilterChain->run()
+#11 D:\Ampps\www\dealssupermarket\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\Ampps\www\dealssupermarket\framework\web\CWebApplication.php(282): CController->run('update')
+#13 D:\Ampps\www\dealssupermarket\framework\web\CWebApplication.php(141): CWebApplication->runController('catalog/product...')
+#14 D:\Ampps\www\dealssupermarket\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 D:\Ampps\www\dealssupermarket\admin.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/dealssupermarket/admin.php/catalog/products/update/id/mpps/www/dealssupermarket/protected/admin/extensions/eckeditor/ECKEdit5.phpckeditor.js?t=B8DJ5M3
+HTTP_REFERER=http://localhost/dealssupermarket/admin.php/catalog/products/update/id/4
+---
+2016/08/19 18:46:07 [warning] [application] Failed to set unsafe attribute "main_image" of "Products".
+in D:\Ampps\www\dealssupermarket\protected\admin\modules\catalog\controllers\ProductsController.php (214)
+in D:\Ampps\www\dealssupermarket\admin.php (13)
+2016/08/19 18:46:07 [warning] [application] Failed to set unsafe attribute "hover_image" of "Products".
+in D:\Ampps\www\dealssupermarket\protected\admin\modules\catalog\controllers\ProductsController.php (214)
+in D:\Ampps\www\dealssupermarket\admin.php (13)
+2016/08/19 18:46:07 [warning] [application] Failed to set unsafe attribute "stock_availability" of "Products".
+in D:\Ampps\www\dealssupermarket\protected\admin\modules\catalog\controllers\ProductsController.php (214)
+in D:\Ampps\www\dealssupermarket\admin.php (13)
+2016/08/19 18:46:07 [warning] [application] Failed to set unsafe attribute "new_from" of "Products".
+in D:\Ampps\www\dealssupermarket\protected\admin\modules\catalog\controllers\ProductsController.php (214)
+in D:\Ampps\www\dealssupermarket\admin.php (13)
+2016/08/19 18:46:07 [warning] [application] Failed to set unsafe attribute "new_to" of "Products".
+in D:\Ampps\www\dealssupermarket\protected\admin\modules\catalog\controllers\ProductsController.php (214)
+in D:\Ampps\www\dealssupermarket\admin.php (13)
+2016/08/19 18:46:07 [warning] [application] Failed to set unsafe attribute "sale_from" of "Products".
+in D:\Ampps\www\dealssupermarket\protected\admin\modules\catalog\controllers\ProductsController.php (214)
+in D:\Ampps\www\dealssupermarket\admin.php (13)
+2016/08/19 18:46:07 [warning] [application] Failed to set unsafe attribute "sale_to" of "Products".
+in D:\Ampps\www\dealssupermarket\protected\admin\modules\catalog\controllers\ProductsController.php (214)
+in D:\Ampps\www\dealssupermarket\admin.php (13)
+2016/08/19 18:46:07 [warning] [application] Failed to set unsafe attribute "special_price_from" of "Products".
+in D:\Ampps\www\dealssupermarket\protected\admin\modules\catalog\controllers\ProductsController.php (214)
+in D:\Ampps\www\dealssupermarket\admin.php (13)
+2016/08/19 18:46:07 [warning] [application] Failed to set unsafe attribute "special_price_to" of "Products".
+in D:\Ampps\www\dealssupermarket\protected\admin\modules\catalog\controllers\ProductsController.php (214)
+in D:\Ampps\www\dealssupermarket\admin.php (13)
+2016/08/19 18:46:07 [warning] [application] Failed to set unsafe attribute "tax" of "Products".
+in D:\Ampps\www\dealssupermarket\protected\admin\modules\catalog\controllers\ProductsController.php (214)
+in D:\Ampps\www\dealssupermarket\admin.php (13)
+2016/08/19 18:46:07 [warning] [application] Failed to set unsafe attribute "gift_option" of "Products".
+in D:\Ampps\www\dealssupermarket\protected\admin\modules\catalog\controllers\ProductsController.php (214)
+in D:\Ampps\www\dealssupermarket\admin.php (13)
+2016/08/19 18:46:07 [warning] [application] Failed to set unsafe attribute "search_tag" of "Products".
+in D:\Ampps\www\dealssupermarket\protected\admin\modules\catalog\controllers\ProductsController.php (214)
+in D:\Ampps\www\dealssupermarket\admin.php (13)
+2016/08/19 18:46:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in D:\Ampps\www\dealssupermarket\protected\admin\modules\catalog\controllers\ProductsController.php:499
+Stack trace:
+#0 D:\Ampps\www\dealssupermarket\protected\admin\modules\catalog\controllers\ProductsController.php(194): ProductsController->loadModel('mpps')
+#1 [internal function]: ProductsController->actionUpdate('mpps')
+#2 D:\Ampps\www\dealssupermarket\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ProductsController), Array)
+#3 D:\Ampps\www\dealssupermarket\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ProductsController), Object(ReflectionMethod), Array)
+#4 D:\Ampps\www\dealssupermarket\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 D:\Ampps\www\dealssupermarket\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 D:\Ampps\www\dealssupermarket\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 D:\Ampps\www\dealssupermarket\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 D:\Ampps\www\dealssupermarket\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 D:\Ampps\www\dealssupermarket\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 D:\Ampps\www\dealssupermarket\framework\web\CController.php(291): CFilterChain->run()
+#11 D:\Ampps\www\dealssupermarket\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\Ampps\www\dealssupermarket\framework\web\CWebApplication.php(282): CController->run('update')
+#13 D:\Ampps\www\dealssupermarket\framework\web\CWebApplication.php(141): CWebApplication->runController('catalog/product...')
+#14 D:\Ampps\www\dealssupermarket\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 D:\Ampps\www\dealssupermarket\admin.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/dealssupermarket/admin.php/catalog/products/update/id/mpps/www/dealssupermarket/protected/admin/extensions/eckeditor/ECKEdit5.phpckeditor.js?t=B8DJ5M3
+HTTP_REFERER=http://localhost/dealssupermarket/admin.php/catalog/products/update/id/4
+---
+2016/08/19 18:46:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in D:\Ampps\www\dealssupermarket\protected\admin\modules\catalog\controllers\ProductsController.php:499
+Stack trace:
+#0 D:\Ampps\www\dealssupermarket\protected\admin\modules\catalog\controllers\ProductsController.php(194): ProductsController->loadModel('mpps')
+#1 [internal function]: ProductsController->actionUpdate('mpps')
+#2 D:\Ampps\www\dealssupermarket\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ProductsController), Array)
+#3 D:\Ampps\www\dealssupermarket\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ProductsController), Object(ReflectionMethod), Array)
+#4 D:\Ampps\www\dealssupermarket\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 D:\Ampps\www\dealssupermarket\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 D:\Ampps\www\dealssupermarket\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 D:\Ampps\www\dealssupermarket\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 D:\Ampps\www\dealssupermarket\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 D:\Ampps\www\dealssupermarket\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 D:\Ampps\www\dealssupermarket\framework\web\CController.php(291): CFilterChain->run()
+#11 D:\Ampps\www\dealssupermarket\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\Ampps\www\dealssupermarket\framework\web\CWebApplication.php(282): CController->run('update')
+#13 D:\Ampps\www\dealssupermarket\framework\web\CWebApplication.php(141): CWebApplication->runController('catalog/product...')
+#14 D:\Ampps\www\dealssupermarket\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 D:\Ampps\www\dealssupermarket\admin.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/dealssupermarket/admin.php/catalog/products/update/id/mpps/www/dealssupermarket/protected/admin/extensions/eckeditor/ECKEdit5.phpckeditor.js?t=B8DJ5M3
+HTTP_REFERER=http://localhost/dealssupermarket/admin.php/catalog/products/update/id/4
+---
+2016/08/19 18:46:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "products/products/NewDelete".' in D:\Ampps\www\dealssupermarket\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\Ampps\www\dealssupermarket\framework\web\CWebApplication.php(141): CWebApplication->runController('products/produc...')
+#1 D:\Ampps\www\dealssupermarket\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\Ampps\www\dealssupermarket\admin.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/dealssupermarket/admin.php/products/products/NewDelete?id=4&path=1.jpg
+HTTP_REFERER=http://localhost/dealssupermarket/admin.php/catalog/products/update/id/4
+---
+2016/08/19 18:46:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in D:\Ampps\www\dealssupermarket\protected\admin\modules\catalog\controllers\ProductsController.php:499
+Stack trace:
+#0 D:\Ampps\www\dealssupermarket\protected\admin\modules\catalog\controllers\ProductsController.php(194): ProductsController->loadModel('mpps')
+#1 [internal function]: ProductsController->actionUpdate('mpps')
+#2 D:\Ampps\www\dealssupermarket\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ProductsController), Array)
+#3 D:\Ampps\www\dealssupermarket\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ProductsController), Object(ReflectionMethod), Array)
+#4 D:\Ampps\www\dealssupermarket\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 D:\Ampps\www\dealssupermarket\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 D:\Ampps\www\dealssupermarket\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 D:\Ampps\www\dealssupermarket\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 D:\Ampps\www\dealssupermarket\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 D:\Ampps\www\dealssupermarket\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 D:\Ampps\www\dealssupermarket\framework\web\CController.php(291): CFilterChain->run()
+#11 D:\Ampps\www\dealssupermarket\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\Ampps\www\dealssupermarket\framework\web\CWebApplication.php(282): CController->run('update')
+#13 D:\Ampps\www\dealssupermarket\framework\web\CWebApplication.php(141): CWebApplication->runController('catalog/product...')
+#14 D:\Ampps\www\dealssupermarket\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 D:\Ampps\www\dealssupermarket\admin.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/dealssupermarket/admin.php/catalog/products/update/id/mpps/www/dealssupermarket/protected/admin/extensions/eckeditor/ECKEdit5.phpckeditor.js?t=B8DJ5M3
+HTTP_REFERER=http://localhost/dealssupermarket/admin.php/catalog/products/update/id/4
+---
+2016/08/19 18:46:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in D:\Ampps\www\dealssupermarket\protected\admin\modules\catalog\controllers\ProductsController.php:499
+Stack trace:
+#0 D:\Ampps\www\dealssupermarket\protected\admin\modules\catalog\controllers\ProductsController.php(194): ProductsController->loadModel('mpps')
+#1 [internal function]: ProductsController->actionUpdate('mpps')
+#2 D:\Ampps\www\dealssupermarket\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ProductsController), Array)
+#3 D:\Ampps\www\dealssupermarket\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ProductsController), Object(ReflectionMethod), Array)
+#4 D:\Ampps\www\dealssupermarket\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 D:\Ampps\www\dealssupermarket\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 D:\Ampps\www\dealssupermarket\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 D:\Ampps\www\dealssupermarket\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 D:\Ampps\www\dealssupermarket\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 D:\Ampps\www\dealssupermarket\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 D:\Ampps\www\dealssupermarket\framework\web\CController.php(291): CFilterChain->run()
+#11 D:\Ampps\www\dealssupermarket\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\Ampps\www\dealssupermarket\framework\web\CWebApplication.php(282): CController->run('update')
+#13 D:\Ampps\www\dealssupermarket\framework\web\CWebApplication.php(141): CWebApplication->runController('catalog/product...')
+#14 D:\Ampps\www\dealssupermarket\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 D:\Ampps\www\dealssupermarket\admin.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/dealssupermarket/admin.php/catalog/products/update/id/mpps/www/dealssupermarket/protected/admin/extensions/eckeditor/ECKEdit5.phpckeditor.js?t=B8DJ5M3
+HTTP_REFERER=http://localhost/dealssupermarket/admin.php/catalog/products/update/id/4
+---
+2016/08/19 18:47:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in D:\Ampps\www\dealssupermarket\protected\admin\modules\catalog\controllers\ProductsController.php:499
+Stack trace:
+#0 D:\Ampps\www\dealssupermarket\protected\admin\modules\catalog\controllers\ProductsController.php(194): ProductsController->loadModel('mpps')
+#1 [internal function]: ProductsController->actionUpdate('mpps')
+#2 D:\Ampps\www\dealssupermarket\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ProductsController), Array)
+#3 D:\Ampps\www\dealssupermarket\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ProductsController), Object(ReflectionMethod), Array)
+#4 D:\Ampps\www\dealssupermarket\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 D:\Ampps\www\dealssupermarket\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 D:\Ampps\www\dealssupermarket\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 D:\Ampps\www\dealssupermarket\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 D:\Ampps\www\dealssupermarket\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 D:\Ampps\www\dealssupermarket\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 D:\Ampps\www\dealssupermarket\framework\web\CController.php(291): CFilterChain->run()
+#11 D:\Ampps\www\dealssupermarket\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\Ampps\www\dealssupermarket\framework\web\CWebApplication.php(282): CController->run('update')
+#13 D:\Ampps\www\dealssupermarket\framework\web\CWebApplication.php(141): CWebApplication->runController('catalog/product...')
+#14 D:\Ampps\www\dealssupermarket\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 D:\Ampps\www\dealssupermarket\admin.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/dealssupermarket/admin.php/catalog/products/update/id/mpps/www/dealssupermarket/protected/admin/extensions/eckeditor/ECKEdit5.phpckeditor.js?t=B8DJ5M3
+HTTP_REFERER=http://localhost/dealssupermarket/admin.php/catalog/products/update/id/5
+---
+2016/08/19 18:48:10 [warning] [application] Failed to set unsafe attribute "main_image" of "Products".
+in D:\Ampps\www\dealssupermarket\protected\admin\modules\catalog\controllers\ProductsController.php (214)
+in D:\Ampps\www\dealssupermarket\admin.php (13)
+2016/08/19 18:48:10 [warning] [application] Failed to set unsafe attribute "hover_image" of "Products".
+in D:\Ampps\www\dealssupermarket\protected\admin\modules\catalog\controllers\ProductsController.php (214)
+in D:\Ampps\www\dealssupermarket\admin.php (13)
+2016/08/19 18:48:10 [warning] [application] Failed to set unsafe attribute "stock_availability" of "Products".
+in D:\Ampps\www\dealssupermarket\protected\admin\modules\catalog\controllers\ProductsController.php (214)
+in D:\Ampps\www\dealssupermarket\admin.php (13)
+2016/08/19 18:48:10 [warning] [application] Failed to set unsafe attribute "new_from" of "Products".
+in D:\Ampps\www\dealssupermarket\protected\admin\modules\catalog\controllers\ProductsController.php (214)
+in D:\Ampps\www\dealssupermarket\admin.php (13)
+2016/08/19 18:48:10 [warning] [application] Failed to set unsafe attribute "new_to" of "Products".
+in D:\Ampps\www\dealssupermarket\protected\admin\modules\catalog\controllers\ProductsController.php (214)
+in D:\Ampps\www\dealssupermarket\admin.php (13)
+2016/08/19 18:48:10 [warning] [application] Failed to set unsafe attribute "sale_from" of "Products".
+in D:\Ampps\www\dealssupermarket\protected\admin\modules\catalog\controllers\ProductsController.php (214)
+in D:\Ampps\www\dealssupermarket\admin.php (13)
+2016/08/19 18:48:10 [warning] [application] Failed to set unsafe attribute "sale_to" of "Products".
+in D:\Ampps\www\dealssupermarket\protected\admin\modules\catalog\controllers\ProductsController.php (214)
+in D:\Ampps\www\dealssupermarket\admin.php (13)
+2016/08/19 18:48:10 [warning] [application] Failed to set unsafe attribute "special_price_from" of "Products".
+in D:\Ampps\www\dealssupermarket\protected\admin\modules\catalog\controllers\ProductsController.php (214)
+in D:\Ampps\www\dealssupermarket\admin.php (13)
+2016/08/19 18:48:10 [warning] [application] Failed to set unsafe attribute "special_price_to" of "Products".
+in D:\Ampps\www\dealssupermarket\protected\admin\modules\catalog\controllers\ProductsController.php (214)
+in D:\Ampps\www\dealssupermarket\admin.php (13)
+2016/08/19 18:48:10 [warning] [application] Failed to set unsafe attribute "tax" of "Products".
+in D:\Ampps\www\dealssupermarket\protected\admin\modules\catalog\controllers\ProductsController.php (214)
+in D:\Ampps\www\dealssupermarket\admin.php (13)
+2016/08/19 18:48:10 [warning] [application] Failed to set unsafe attribute "gift_option" of "Products".
+in D:\Ampps\www\dealssupermarket\protected\admin\modules\catalog\controllers\ProductsController.php (214)
+in D:\Ampps\www\dealssupermarket\admin.php (13)
+2016/08/19 18:48:10 [warning] [application] Failed to set unsafe attribute "search_tag" of "Products".
+in D:\Ampps\www\dealssupermarket\protected\admin\modules\catalog\controllers\ProductsController.php (214)
+in D:\Ampps\www\dealssupermarket\admin.php (13)
+2016/08/19 18:48:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in D:\Ampps\www\dealssupermarket\protected\admin\modules\catalog\controllers\ProductsController.php:499
+Stack trace:
+#0 D:\Ampps\www\dealssupermarket\protected\admin\modules\catalog\controllers\ProductsController.php(194): ProductsController->loadModel('mpps')
+#1 [internal function]: ProductsController->actionUpdate('mpps')
+#2 D:\Ampps\www\dealssupermarket\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ProductsController), Array)
+#3 D:\Ampps\www\dealssupermarket\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ProductsController), Object(ReflectionMethod), Array)
+#4 D:\Ampps\www\dealssupermarket\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 D:\Ampps\www\dealssupermarket\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 D:\Ampps\www\dealssupermarket\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 D:\Ampps\www\dealssupermarket\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 D:\Ampps\www\dealssupermarket\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 D:\Ampps\www\dealssupermarket\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 D:\Ampps\www\dealssupermarket\framework\web\CController.php(291): CFilterChain->run()
+#11 D:\Ampps\www\dealssupermarket\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\Ampps\www\dealssupermarket\framework\web\CWebApplication.php(282): CController->run('update')
+#13 D:\Ampps\www\dealssupermarket\framework\web\CWebApplication.php(141): CWebApplication->runController('catalog/product...')
+#14 D:\Ampps\www\dealssupermarket\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 D:\Ampps\www\dealssupermarket\admin.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/dealssupermarket/admin.php/catalog/products/update/id/mpps/www/dealssupermarket/protected/admin/extensions/eckeditor/ECKEdit5.phpckeditor.js?t=B8DJ5M3
+HTTP_REFERER=http://localhost/dealssupermarket/admin.php/catalog/products/update/id/5
+---
+2016/08/19 18:48:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in D:\Ampps\www\dealssupermarket\protected\admin\modules\catalog\controllers\ProductsController.php:499
+Stack trace:
+#0 D:\Ampps\www\dealssupermarket\protected\admin\modules\catalog\controllers\ProductsController.php(194): ProductsController->loadModel('mpps')
+#1 [internal function]: ProductsController->actionUpdate('mpps')
+#2 D:\Ampps\www\dealssupermarket\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ProductsController), Array)
+#3 D:\Ampps\www\dealssupermarket\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ProductsController), Object(ReflectionMethod), Array)
+#4 D:\Ampps\www\dealssupermarket\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 D:\Ampps\www\dealssupermarket\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 D:\Ampps\www\dealssupermarket\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 D:\Ampps\www\dealssupermarket\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 D:\Ampps\www\dealssupermarket\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 D:\Ampps\www\dealssupermarket\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 D:\Ampps\www\dealssupermarket\framework\web\CController.php(291): CFilterChain->run()
+#11 D:\Ampps\www\dealssupermarket\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\Ampps\www\dealssupermarket\framework\web\CWebApplication.php(282): CController->run('update')
+#13 D:\Ampps\www\dealssupermarket\framework\web\CWebApplication.php(141): CWebApplication->runController('catalog/product...')
+#14 D:\Ampps\www\dealssupermarket\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 D:\Ampps\www\dealssupermarket\admin.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/dealssupermarket/admin.php/catalog/products/update/id/mpps/www/dealssupermarket/protected/admin/extensions/eckeditor/ECKEdit5.phpckeditor.js?t=B8DJ5M3
+HTTP_REFERER=http://localhost/dealssupermarket/admin.php/catalog/products/update/id/5
+---

@@ -27,7 +27,9 @@ class SiteController extends Controller {
         public function actionIndex() {
 
                 $slider = Slider::model()->findAllByAttributes(array('status' => 1));
-                $this->render('index', array('slider' => $slider));
+                $model = Pages::model()->findAll(array('condition' => 'menu_id=15 and status=1'));
+                $pdtbanner = Products::model()->findAll(array('condition' => 'special_product_image!="" and status=1'), array('condition' => 'limit 2'));
+                $this->render('index', array('slider' => $slider, 'model' => $model, 'pdtbanner' => $pdtbanner));
         }
 
         public function actionError() {
@@ -176,9 +178,9 @@ class SiteController extends Controller {
                                         } else if ($modell->status == 1) {
 
                                                 Yii::app()->session['user'] = $modell;
-                                                $newDate = date("Y-m-d H:i:s");
-                                                $modell->last_login = $newDate;
-                                                $modell->save();
+                                                /* $newDate = date("Y-m-d H:i:s");
+                                                  $modell->last_login = $newDate;
+                                                  $modell->save(); */
                                                 $this->redirect(Yii::app()->request->baseUrl . '/index.php/Myaccount');
                                         }
                                 } else {
@@ -232,11 +234,11 @@ class SiteController extends Controller {
         public function RegisterMail($model) {
                 $user = $model->email;
 
-                $user_subject = 'Welcome to laksyah.com!';
+                $user_subject = 'Welcome to Deal Supermarket!';
                 $user_message = $this->renderPartial('_register_user_mail', array('model' => $model), true);
                 $admin = AdminUser::model()->findByPk(4)->email;
 
-                $admin_subject = $model->first_name . ' registered with laksyah';
+                $admin_subject = $model->first_name . ' registered with deal supermarker';
                 $admin_message = $this->renderPartial('_register_admin_mail', array('model' => $model), true);
 // Always set content-type when sending HTML email
                 $headers = "MIME-Version: 1.0" . "\r\n";
@@ -255,7 +257,7 @@ class SiteController extends Controller {
         public function VerificationMail($model) {
                 $user = $model->email;
 
-                $user_subject = 'laksyah Account - ' . $model->verify_code . ' is your verification code for secure access!';
+                $user_subject = 'Deal Supermarket Account - ' . $model->verify_code . ' is your verification code for secure access!';
                 $user_message = $this->renderPartial('_verify_user_mail', array('model' => $model), true);
 
 
@@ -276,7 +278,6 @@ class SiteController extends Controller {
         public function actionLogout() {
 // Cart::model()->deleteAllByAttributes(array('user_id' => Yii::app()->session['user']['id']));
                 unset(Yii::app()->session['user']);
-                unset(Yii::app()->session['gift_card_option']);
                 unset($_SESSION);
 
                 Yii::app()->user->logout();
@@ -318,14 +319,14 @@ class SiteController extends Controller {
 //                $admin = 'shahana@intersmart.in';
                 $admin = AdminUser::model()->findByPk(4)->email;
 
-                $admin_subject = 'laksyah.com:New Enquiry Recieved';
+                $admin_subject = 'Deal Supermarket:New Enquiry Recieved';
                 $admin_message = $this->renderPartial('mail/_admin_contact_email', array('model' => $model), true);
 
                 // Always set content-type when sending HTML email
                 $headers = "MIME-Version: 1.0" . "\r\n";
                 $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
                 // More headers
-                $headers .= 'From: <no-reply@beta.laksyah.com>' . "\r\n";
+                $headers .= 'From: <no-reply@intersmarthosting.in>' . "\r\n";
 
                 //  mail($admin, $admin_subject, $admin_message, $headers);
         }
@@ -378,7 +379,7 @@ class SiteController extends Controller {
                 $headers = "MIME-Version: 1.0" . "\r\n";
                 $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
                 // More headers
-                $headers .= 'From: <no-reply@beta.laksyah.com>' . "\r\n";
+                $headers .= 'From: <no-reply@intersmarthosting.in>' . "\r\n";
 
                 mail($user, $user_subject, $user_message, $headers);
         }

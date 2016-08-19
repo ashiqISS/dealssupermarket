@@ -147,7 +147,7 @@ class MyaccountController extends Controller {
                                                 $this->ProductEnquiryMail($model, $enq_history_update);
                                         }
                                 }
-                                Yii::app()->user->setFlash('meas_success', " Your Measurement Successfully Saved");
+                                Yii::app()->user->setFlash('meas_success', "Your Measurement Successfully Saved");
                                 $this->redirect(array('Myaccount/SizeChartType'));
                         }
                         $this->render('size_type', array('model' => $model));
@@ -538,7 +538,7 @@ class MyaccountController extends Controller {
 
                                                 if ($model->netbanking != '') {
                                                         $hdfc_details = array();
-                                                        $hdfc_details['description'] = 'Laksyah Payment';
+                                                        $hdfc_details['description'] = 'Deal Supermarket Payment';
                                                         $hdfc_details['order'] = $model->id;
                                                         $hdfc_details['totaltopay'] = $model->netbanking;
                                                         $hdfc_details['bill_name'] = $order_billing_details->first_name . ' ' . $order_billing_details->last_name;
@@ -681,7 +681,7 @@ class MyaccountController extends Controller {
                                                 /* wallet entry ends */
                                                 if ($model->netbanking != '') {
                                                         $hdfc_details = array();
-                                                        $hdfc_details['description'] = 'Laksyah Payment';
+                                                        $hdfc_details['description'] = 'Deal Supermarket Payment';
                                                         $hdfc_details['order'] = $model->id;
                                                         $hdfc_details['totaltopay'] = $model->netbanking;
                                                         $hdfc_details ['bill_name'] = $order_billing_details->first_name . ' ' . $order_billing_details->last_name;
@@ -807,7 +807,7 @@ class MyaccountController extends Controller {
                 $userdetails = UserDetails::model()->findByPk(Yii::app()->session['user']['id']);
                 $user = $userdetails->email;
 
-                $user_subject = 'Payment of product ' . $payment->product_name . ' with laksyah.com  succesfully Completed';
+                $user_subject = 'Payment of product ' . $payment->product_name . ' with Deal Supermarket  succesfully Completed';
                 $user_message = $this->renderPartial('mail/_user_payment_success_mail', array('userdetails' => $userdetails, 'enquiry' => $enquiry, 'payment' => $payment), true);
 
                 $admin = AdminUser::model()->findByPk(4)->email;
@@ -875,7 +875,7 @@ class MyaccountController extends Controller {
                 $userdetails = UserDetails::model()->findByPk(Yii::app()->session['user'] ['id']);
                 $user = $userdetails->email;
 
-                $user_subject = 'Payment Failure :Payment of product ' . $payment->product_name . ' with laksyah.com';
+                $user_subject = 'Payment Failure :Payment of product ' . $payment->product_name . ' with Deal Supermarket';
                 $user_message = $this->renderPartial('mail/_user_payment_error_mail', array('userdetails' => $userdetails, 'enquiry' => $enquiry, 'payment' => $payment), true);
 
                 $admin = AdminUser::model()->findByPk(4)->email;

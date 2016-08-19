@@ -9,7 +9,7 @@ class ProductsController extends Controller {
         public $layout = '//layouts/column2';
 
         public function init() {
-                if(!isset(Yii::app()->session['admin']) || Yii::app()->session['post']['products'] != 1) {
+                if (!isset(Yii::app()->session['admin']) || Yii::app()->session['post']['products'] != 1) {
                         $this->redirect(Yii::app()->request->baseUrl . '/admin.php/site/logOut');
                 }
         }
@@ -73,7 +73,7 @@ class ProductsController extends Controller {
                 // Uncomment the following line if AJAX validation is needed
                 // $this->performAjaxValidation($model);
 
-                if(isset($_POST['Products'])) {
+                if (isset($_POST['Products'])) {
 
 
 
@@ -85,7 +85,7 @@ class ProductsController extends Controller {
                         $special_image = CUploadedFile::getInstance($model, 'special_product_image');
 
                         //$model->search_tag = $_POST['ProductCategory']['search_tag'];
-                        if($model->search_tag != "") {
+                        if ($model->search_tag != "") {
                                 $model->search_tag = implode(",", $model->search_tag);
                         } else {
                                 $model->search_tag = $_POST['ProductCategory']['search_tag'];
@@ -103,34 +103,34 @@ class ProductsController extends Controller {
                         $model->related_products = $_POST['Products']['related_products'];
                         // $model->related_products = implode(",", $model->related_products);
 
-                        if($model->related_products != "") {
+                        if ($model->related_products != "") {
                                 $model->related_products = implode(",", $model->related_products);
                         } else {
                                 $model->related_products = "";
                         }
 
                         $model->meta_description = $_POST['Products']['meta_description'];
-                        if($_POST['Products']['new_from'] != "")
+                        if ($_POST['Products']['new_from'] != "")
                                 $model->new_from = date("Y-m-d", strtotime($_POST['Products']['new_from']));
                         else
                                 $model->new_from = 0;
-                        if($_POST['Products']['new_to'] != "")
+                        if ($_POST['Products']['new_to'] != "")
                                 $model->new_to = date("Y-m-d", strtotime($_POST['Products']['new_to']));
                         else
                                 $model->new_to = 0;
-                        if($_POST['Products']['sale_from'] != "")
+                        if ($_POST['Products']['sale_from'] != "")
                                 $model->sale_from = date("Y-m-d", strtotime($_POST['Products']['sale_from']));
                         else
                                 $model->sale_from = 0;
-                        if($_POST['Products']['sale_to'] != "")
+                        if ($_POST['Products']['sale_to'] != "")
                                 $model->sale_to = date("Y-m-d", strtotime($_POST['Products']['sale_to']));
                         else
                                 $model->sale_to = 0;
-                        if($_POST['Products']['special_price_from'] != "")
+                        if ($_POST['Products']['special_price_from'] != "")
                                 $model->special_price_from = date("Y-m-d", strtotime($_POST['Products']['special_price_from']));
                         else
                                 $model->special_price_from = 0;
-                        if($_POST['Products']['special_price_to'] != "")
+                        if ($_POST['Products']['special_price_to'] != "")
                                 $model->special_price_to = date("Y-m-d", strtotime($_POST['Products']['special_price_to']));
                         else
                                 $model->special_price_to = 0;
@@ -141,11 +141,11 @@ class ProductsController extends Controller {
                         $model->DOC = date('Y-m-d');
 
 
-                        if($model->validate()) {
+                        if ($model->validate()) {
 
 
-                                if($model->save()) {
-                                        if($image != "") {
+                                if ($model->save()) {
+                                        if ($image != "") {
                                                 $id = $model->id;
                                                 $dimension[0] = array('width' => '116', 'height' => '155', 'name' => 'small');
                                                 $dimension[1] = array('width' => '322', 'height' => '500', 'name' => 'medium');
@@ -154,20 +154,20 @@ class ProductsController extends Controller {
                                                 Yii::app()->Upload->uploadImage($image, $id, true, $dimension);
                                         }
 
-                                        if($hover_image != "") {
+                                        if ($hover_image != "") {
                                                 $id = $model->id;
                                                 $dimensions[0] = array('width' => '322', 'height' => '500', 'name' => 'hover');
                                                 Yii::app()->Upload->uploadHoverImage($hover_image, $id, true, $dimensions);
                                         }
 
-                                        if($images != "") {
+                                        if ($images != "") {
                                                 $id = $model->id;
                                                 $dimension[0] = array('width' => '116', 'height' => '155', 'name' => 'small');
                                                 $dimension[1] = array('width' => '580', 'height' => '775', 'name' => 'big');
                                                 $dimension[3] = array('width' => '1508', 'height' => '2015', 'name' => 'zoom');
                                                 Yii::app()->Upload->uploadMultipleImage($images, $id, true, $dimension);
                                         }
-                                        if($special_image != "") {
+                                        if ($special_image != "") {
                                                 $id = $model->id;
 
                                                 $dimensions[0] = array('width' => '560', 'height' => '270', 'name' => 'special');
@@ -205,13 +205,12 @@ class ProductsController extends Controller {
                 // Uncomment the following line if AJAX validation is needed
                 // $this->performAjaxValidation($model);
 
-                if(isset($_POST['Products'])) {
+                if (isset($_POST['Products'])) {
 
                         $image = CUploadedFile::getInstance($model, 'main_image');
                         $h_image = CUploadedFile::getInstance($model, 'hover_image');
                         $images = CUploadedFile::getInstancesByName('gallery_images');
                         $special_image = CUploadedFile::getInstance($model, 'special_product_image');
-
                         $model->attributes = $_POST['Products'];
                         $model->main_image = $image->extensionName;
                         $model->search_tag = $_POST['Products']['search_tag'];
@@ -221,32 +220,32 @@ class ProductsController extends Controller {
 
                         $model->related_products = $_POST['Products']['related_products'];
 
-                        if($model->related_products != "") {
+                        if ($model->related_products != "") {
                                 $model->related_products = implode(",", $model->related_products);
                         } else {
                                 $model->related_products = "";
                         }
-                        if($_POST['Products']['new_from'] != "" && $_POST['Products']['new_from'] != '0000-00-00')
+                        if ($_POST['Products']['new_from'] != "" && $_POST['Products']['new_from'] != '0000-00-00')
                                 $model->new_from = date("Y-m-d", strtotime($_POST['Products']['new_from']));
                         else
                                 $model->new_from = 0;
-                        if($_POST['Products']['new_to'] != "" && $_POST['Products']['new_to'] != '0000-00-00')
+                        if ($_POST['Products']['new_to'] != "" && $_POST['Products']['new_to'] != '0000-00-00')
                                 $model->new_to = date("Y-m-d", strtotime($_POST['Products']['new_to']));
                         else
                                 $model->new_to = 0;
-                        if($_POST['Products']['sale_from'] != "" && $_POST['Products']['sale_from'] != '0000-00-00')
+                        if ($_POST['Products']['sale_from'] != "" && $_POST['Products']['sale_from'] != '0000-00-00')
                                 $model->sale_from = date("Y-m-d", strtotime($_POST['Products']['sale_from']));
                         else
                                 $model->sale_from = 0;
-                        if($_POST['Products']['sale_to'] != "" && $_POST['Products']['sale_to'] != '0000-00-00')
+                        if ($_POST['Products']['sale_to'] != "" && $_POST['Products']['sale_to'] != '0000-00-00')
                                 $model->sale_to = date("Y-m-d", strtotime($_POST['Products']['sale_to']));
                         else
                                 $model->sale_to = 0;
-                        if($_POST['Products']['special_price_from'] != "" && $_POST['Products']['special_price_from'] != '0000-00-00')
+                        if ($_POST['Products']['special_price_from'] != "" && $_POST['Products']['special_price_from'] != '0000-00-00')
                                 $model->special_price_from = date("Y-m-d", strtotime($_POST['Products']['special_price_from']));
                         else
                                 $model->special_price_from = 0;
-                        if($_POST['Products']['special_price_to'] != "" && $_POST['Products']['special_price_to'] != '0000-00-00')
+                        if ($_POST['Products']['special_price_to'] != "" && $_POST['Products']['special_price_to'] != '0000-00-00')
                                 $model->special_price_to = date("Y-m-d", strtotime($_POST['Products']['special_price_to']));
                         else
                                 $model->special_price_to = 0;
@@ -255,7 +254,7 @@ class ProductsController extends Controller {
                         $model->DOU = date('Y-m-d');
 
 
-                        if($image != "") {
+                        if ($image != "") {
                                 $id = $model->id;
                                 $dimension[0] = array('width' => '116', 'height' => '155', 'name' => 'small');
                                 $dimension[1] = array('width' => '322', 'height' => '500', 'name' => 'medium');
@@ -267,7 +266,7 @@ class ProductsController extends Controller {
                         }
 
 
-                        if($h_image != "") {
+                        if ($h_image != "") {
                                 $id = $model->id;
 
                                 $dimensions[0] = array('width' => '322', 'height' => '500', 'name' => 'hover');
@@ -279,7 +278,7 @@ class ProductsController extends Controller {
                         }
 
 
-                        if($images != "") {
+                        if ($images != "") {
                                 $id = $model->id;
                                 $dimension[0] = array('width' => '116', 'height' => '155', 'name' => 'small');
                                 $dimension[1] = array('width' => '580', 'height' => '775', 'name' => 'big');
@@ -289,7 +288,8 @@ class ProductsController extends Controller {
                                 $model->gallery_images = $image0;
                         }
 
-                        if($special_image != "") {
+                        if ($special_image != "") {
+
                                 $id = $model->id;
 
                                 $dimensions[0] = array('width' => '560', 'height' => '270', 'name' => 'special');
@@ -305,12 +305,12 @@ class ProductsController extends Controller {
                         $model->description = $_POST['Products']['description'];
                         $model->meta_description = $_POST['Products']['meta_description'];
                         $model->stock_availability = $_POST['Products']['stock_availability'];
-                        if($model->stock_availability == 1) {
+                        if ($model->stock_availability == 1) {
                                 $this->notify($id, $model->canonical_name);
                         }
 
-                        if($model->validate()) {
-                                if($model->save(false)) {
+                        if ($model->validate()) {
+                                if ($model->save(false)) {
                                         $this->redirect(array('update', 'id' => $model->id));
                                 }
                         }
@@ -323,8 +323,8 @@ class ProductsController extends Controller {
 
         public function notify($id, $name) {
                 $datas = UserNotify::model()->findAllByAttributes(array('prod_id' => $id, 'status' => 1));
-                if(!empty($datas)) {
-                        foreach($datas as $data) {
+                if (!empty($datas)) {
+                        foreach ($datas as $data) {
                                 $user = $data->email_id;
 //                                $to = $user->email;
 //                                $subject = "Product Availability";
@@ -372,7 +372,7 @@ class ProductsController extends Controller {
 
                 $model = $this->loadModel($id);
                 $folder = Yii::app()->Upload->folderName(0, 1000, $model->id);
-                if(is_dir(Yii::app()->basePath . '/../uploads/products/' . $folder)) {
+                if (is_dir(Yii::app()->basePath . '/../uploads/products/' . $folder)) {
                         $path = Yii::app()->basePath . '/../uploads/products/' . $folder . '/' . $id;
                         $this->imageDelete($path);
                         $model->delete();
@@ -383,17 +383,17 @@ class ProductsController extends Controller {
 
 
                 // if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-                if(!isset($_GET['ajax']))
+                if (!isset($_GET['ajax']))
                         $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
         }
 
         public function imageDelete($path) {
 
 
-                if(is_dir($path)) {
-                        foreach(glob("{$path}/*") as $file) {
-                                if($file != '') {
-                                        if(is_dir($file)) {
+                if (is_dir($path)) {
+                        foreach (glob("{$path}/*") as $file) {
+                                if ($file != '') {
+                                        if (is_dir($file)) {
                                                 $this->imageDelete($file);
                                         } else {
                                                 unlink($file);
@@ -423,11 +423,11 @@ class ProductsController extends Controller {
 
                 $model = new Products('search');
                 $model->unsetAttributes();  // clear any default values
-                if(isset($_GET['Products'])) {
+                if (isset($_GET['Products'])) {
                         $model->attributes = $_GET['Products'];
                         $model->product_name = $_GET['Products']['product_name'];
                 }
-                if($out_ofstock != '') {
+                if ($out_ofstock != '') {
                         $model->quantity = '<' . $out_ofstock;
                 }
 
@@ -442,7 +442,7 @@ class ProductsController extends Controller {
                 $model = $this->loadModel($id);
                 $folder = Yii::app()->Upload->folderName(0, 1000, $model->id);
 
-                if(is_dir(Yii::app()->basePath . '/../uploads/products/' . $folder)) {
+                if (is_dir(Yii::app()->basePath . '/../uploads/products/' . $folder)) {
                         $big = Yii::app()->basePath . '/../uploads/products/' . $folder . '/' . $id . '/gallery/big/' . $image;
                         $small = Yii::app()->basePath . '/../uploads/products/' . $folder . '/' . $id . '/gallery/small/' . $image;
                         $zoom = Yii::app()->basePath . '/../uploads/products/' . $folder . '/' . $id . '/gallery/zoom/' . $image;
@@ -455,9 +455,9 @@ class ProductsController extends Controller {
         }
 
         public function actionCategoryOptions() {
-                if(Yii::app()->request->isAjaxRequest) {
+                if (Yii::app()->request->isAjaxRequest) {
                         $categories = ProductCategory::model()->findAll();
-                        foreach($categories as $category) {
+                        foreach ($categories as $category) {
                                 echo '<div class = "' . $_REQUEST['type'] . '_tag-sub" id = "2">Electronics</div>';
                                 // echo '<div class = "' . $_REQUEST['type'] . '_tag-sub" id = "1">Mobiles</div>';
                         }
@@ -467,7 +467,7 @@ class ProductsController extends Controller {
         public function selectCategory($data) {
 
                 $index = count($_SESSION['category']);
-                if($data->id == $data->parent) {
+                if ($data->id == $data->parent) {
                         $_SESSION['category'][$index + 1] = $data->category_name;
                 } else {
                         $results = ProductCategory::model()->findByPk($data->parent);
@@ -476,7 +476,7 @@ class ProductsController extends Controller {
                 }
                 $return = '';
                 $category_arr = array_reverse($_SESSION['category']);
-                foreach($category_arr as $cat) {
+                foreach ($category_arr as $cat) {
                         $return .=$cat . '>';
                 }
                 return rtrim($return, '>');
@@ -495,7 +495,7 @@ class ProductsController extends Controller {
          */
         public function loadModel($id) {
                 $model = Products::model()->findByPk($id);
-                if($model === null)
+                if ($model === null)
                         throw new CHttpException(404, 'The requested page does not exist.');
                 return $model;
         }
@@ -505,7 +505,7 @@ class ProductsController extends Controller {
          * @param Products $model the model to be validated
          */
         protected function performAjaxValidation($model) {
-                if(isset($_POST['ajax']) && $_POST['ajax'] === 'products-form') {
+                if (isset($_POST['ajax']) && $_POST['ajax'] === 'products-form') {
                         echo CActiveForm::validate($model);
                         Yii::app()->end();
                 }
