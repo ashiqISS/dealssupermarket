@@ -17,6 +17,9 @@ switch($method) {
         case "EditAddress":
                 $aactive = "sidebaractive";
                 break;
+        case "newaddress":
+                $aactive = "sidebaractive";
+                break;
         case "Newaddress":
                 $aactive = "sidebaractive";
                 break;
