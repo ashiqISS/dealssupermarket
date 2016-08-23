@@ -155,106 +155,42 @@
                                 <h1><span class="popular">popular PRODUCTS</span></h1>
 
                                 <div class="productz">
-                                        <div class="item margins">
-                                                <div class="main">
+                                        <?php
+                                        foreach ($pop as $pops) {
+                                                ?>
+                                                <div class="item margins">
+                                                        <div class="main">
 
-                                                        <div class="lak">
-                                                                <a href="#">  <img class="img-responsive our" src="images/p1.jpg"> </a>
-                                                                <div class="cart-img">
-                                                                        <h3><a class="title_1" href="#">Coca Cola</a></h3>
-                                                                        <h4><a class="title_2" href="#">AED : 1.50</a></h4>
-                                                                        <a class="cart-btn" href="category.php"><i class="fa baskets fa-shopping-basket"></i>Add to baskest</a>
+                                                                <div class="lak">
+                                                                        <a href="#">  <img class="img-responsive our" src="<?php echo Yii::app()->baseUrl; ?>/uploads/products/1000/<?php echo $pops->id; ?>/big.<?php echo $pops->main_image; ?>"> </a>
+                                                                        <div class="cart-img">
+                                                                                <h3><a class="title_1" href="#"><?php echo $pops->product_name; ?></a></h3>
+                                                                                <h4><a class="title_2" href="#">AED :
+                                                                                                <?php
+                                                                                                if (($_SESSION['location']) && ($_SESSION['location'] == 'MARINA')) {
+
+                                                                                                        echo $pops->price_in_marina;
+                                                                                                } else {
+                                                                                                        echo $pops->price_in_barsha;
+                                                                                                }
+                                                                                                ?>
+                                                                                        </a></h4>
+                                                                                <a class="cart-btn" href="category.php"><i class="fa baskets fa-shopping-basket"></i>Add to basket</a>
+                                                                        </div>
+
+                                                                        <div class="overlays"></div>
+
+
+                                                                        <img class="img-responsive off-tag" src="images/tag.png">
+
                                                                 </div>
 
-                                                                <div class="overlays"></div>
-
-
-                                                                <img class="img-responsive off-tag" src="images/tag.png">
-
-                                                        </div>
-
-                                                </div>
-                                        </div>
-
-                                        <div class="item margins">
-                                                <div class="main">
-                                                        <div class="lak">
-                                                                <a href="#"> <img class="img-responsive our" src="images/p2.jpg"></a>
-                                                                <div class="cart-img">
-                                                                        <h3><a class="title_1" href="#">Nescafe Classic 100gm</a></h3>
-                                                                        <h4><a class="title_2" href="#">AED : 16.00</a></h4>
-                                                                        <a class="cart-btn" href="#"><i class="fa baskets fa-shopping-basket"></i>Add to baskest</a>
-                                                                </div>
-
-                                                                <div class="overlays"></div>
                                                         </div>
                                                 </div>
-                                        </div>
 
-
-                                        <div class="item margins">
-                                                <div class="main">
-                                                        <div class="lak">
-                                                                <a href="#"> <img class="img-responsive our" src="images/p3.jpg"></a>
-                                                                <div class="cart-img">
-                                                                        <h3><a class="title_1" href="#">Signal TB Inside Clean Mar</a></h3>
-                                                                        <h4><a class="title_2" href="#">AED : 19.00</a></h4>
-                                                                        <a class="cart-btn" href="#"><i class="fa baskets fa-shopping-basket"></i>Add to baskest</a>
-                                                                </div>
-
-                                                                <div class="overlays"></div>
-                                                        </div>
-                                                </div>
-                                        </div>
-
-
-                                        <div class="item margins">
-                                                <div class="main">
-                                                        <div class="lak">
-                                                                <a href="#"><img class="img-responsive our" src="images/p4.jpg"></a>
-                                                                <div class="cart-img">
-                                                                        <h3><a class="title_1" href="#">Lays Chips Salt 170GM</a></h3>
-                                                                        <h4><a class="title_2" href="#">AED : 6.75</a></h4>
-                                                                        <a class="cart-btn" href="#"><i class="fa baskets fa-shopping-basket"></i>Add to baskest</a>
-                                                                </div>
-
-                                                                <div class="overlays"></div>
-                                                        </div>
-                                                </div>
-                                        </div>
-
-
-                                        <div class="item margins">
-                                                <div class="main">
-                                                        <div class="lak">
-                                                                <a href="#">  <img class="img-responsive our" src="images/p5.jpg"></a>
-                                                                <div class="cart-img">
-                                                                        <h3><a class="title_1" href="#">Floridas Natural Growers ..</a></h3>
-                                                                        <h4><a class="title_2" href="#">AED : 11.50</a></h4>
-                                                                        <a class="cart-btn" href="#"><i class="fa baskets fa-shopping-basket"></i>Add to baskest</a>
-                                                                </div>
-
-                                                                <div class="overlays"></div>
-                                                        </div>
-                                                </div>
-                                        </div>
-
-
-                                        <div class="item margins">
-                                                <div class="main">
-                                                        <div class="lak">
-                                                                <a href="#"><img class="img-responsive our" src="images/p6.jpg"></a>
-                                                                <div class="cart-img">
-                                                                        <h3><a class="title_1" href="#">Hero Baby Apple Juice 130ml</a></h3>
-                                                                        <h4><a class="title_2" href="#">AED : 5.75</a></h4>
-                                                                        <a class="cart-btn" href="#"><i class="fa baskets fa-shopping-basket"></i>Add to baskest</a>
-                                                                </div>
-
-                                                                <div class="overlays"></div>
-                                                        </div>
-                                                </div>
-                                        </div>
-
+                                                <?php
+                                        }
+                                        ?>
 
 
 
@@ -275,107 +211,36 @@
                                 <h1><span class="popular">Featured PRODUCTS</span></h1>
 
                                 <div class="productz-2">
+                                        <?php
+                                        foreach ($fet as $fets) {
+                                                ?>
 
-
-                                        <div class="item margins">
-                                                <div class="main">
-                                                        <div class="lak">
-                                                                <a href="#"> <img class="img-responsive our" src="images/p2.jpg"></a>
-                                                                <div class="cart-img">
-                                                                        <h3><a class="title_1" href="#">Nescafe Classic 100gm</a></h3>
-                                                                        <h4><a class="title_2" href="#">AED : 16.00</a></h4>
-                                                                        <a class="cart-btn" href="#"><i class="fa baskets fa-shopping-basket"></i>Add to baskest</a>
-                                                                </div>
-
-                                                                <div class="overlays"></div>
-                                                        </div>
-                                                </div>
-                                        </div>
-
-
-                                        <div class="item margins">
-                                                <div class="main">
-                                                        <div class="lak">
-                                                                <a href="#"> <img class="img-responsive our" src="images/p3.jpg"></a>
-                                                                <div class="cart-img">
-                                                                        <h3><a class="title_1" href="#">Signal TB Inside Clean Mar</a></h3>
-                                                                        <h4><a class="title_2" href="#">AED : 19.00</a></h4>
-                                                                        <a class="cart-btn" href="#"><i class="fa baskets fa-shopping-basket"></i>Add to baskest</a>
-                                                                </div>
-
-                                                                <div class="overlays"></div>
-                                                        </div>
-                                                </div>
-                                        </div>
-
-                                        <div class="item margins">
-                                                <div class="main">
-                                                        <div class="lak">
-                                                                <a href="#"><img class="img-responsive our" src="images/p4.jpg"></a>
-                                                                <div class="cart-img">
-
-                                                                        <h3><a class="title_1" href="#">Lays Chips Salt 170GM</a></h3>
-                                                                        <h4><a class="title_2" href="#">AED : 6.75</a></h4>
-                                                                        <a class="cart-btn" href="#"><i class="fa baskets fa-shopping-basket"></i>Add to baskest</a>
-                                                                </div>
-
-                                                                <div class="overlays"></div>
-                                                        </div>
-                                                </div>
-                                        </div>
-
-
-                                        <div class="item margins">
-                                                <div class="main">
-                                                        <div class="lak">
-                                                                <a href="#">  <img class="img-responsive our" src="images/p5.jpg"></a>
-                                                                <div class="cart-img">
-                                                                        <h3><a class="title_1" href="#">Floridas Natural Growers ..</a></h3>
-                                                                        <h4><a class="title_2" href="#">AED : 11.50</a></h4>
-                                                                        <a class="cart-btn" href="#"><i class="fa baskets fa-shopping-basket"></i>Add to baskest</a>
-                                                                </div>
-
-                                                                <div class="overlays"></div>
-                                                        </div>
-                                                </div>
-                                        </div>
-
-
-                                        <div class="item margins">
-                                                <div class="main">
-                                                        <div class="lak">
-                                                                <a href="#"><img class="img-responsive our" src="images/p6.jpg"></a>
-                                                                <div class="cart-img">
-                                                                        <h3><a class="title_1" href="#">Hero Baby Apple Juice 130ml</a></h3>
-                                                                        <h4><a class="title_2" href="#">AED : 5.75</a></h4>
-                                                                        <a class="cart-btn" href="#"><i class="fa baskets fa-shopping-basket"></i>Add to baskest</a>
-                                                                </div>
-
-                                                                <div class="overlays"></div>
-                                                        </div>
-                                                </div>
-                                        </div>
-
-                                        <div class="item margins">
-                                                <div class="main">
-                                                        <a href="#">
+                                                <div class="item margins">
+                                                        <div class="main">
                                                                 <div class="lak">
-                                                                        <img class="img-responsive our" src="images/p1.jpg">
+                                                                        <a href="#"> <img class="img-responsive our" src="<?php echo Yii::app()->baseUrl; ?>/uploads/products/1000/<?php echo $fets->id; ?>/big.<?php echo $fets->main_image; ?>"></a>
                                                                         <div class="cart-img">
-                                                                                <h3><a class="title_1" href="#">Coca Cola</a></h3>
-                                                                                <h4><a class="title_2" href="#">AED : 1.50</a></h4>
-                                                                                <a class="cart-btn" href="#"><i class="fa baskets fa-shopping-basket"></i>Add to baskest</a>
+                                                                                <h3><a class="title_1" href="#"><?php echo $fets->product_name; ?></a></h3>
+                                                                                <h4><a class="title_2" href="#">AED : <?php
+                                                                                                if (($_SESSION['location']) && ($_SESSION['location'] == 'MARINA')) {
+
+                                                                                                        echo $fets->price_in_marina;
+                                                                                                } else {
+                                                                                                        echo $fets->price_in_barsha;
+                                                                                                }
+                                                                                                ?></a></h4>
+                                                                                <a class="cart-btn" href="#"><i class="fa baskets fa-shopping-basket"></i>Add to basket</a>
                                                                         </div>
 
                                                                         <div class="overlays"></div>
-
-
-                                                                        <img class="img-responsive off-tag" src="images/tag.png">
-
                                                                 </div>
-                                                        </a>
+                                                        </div>
                                                 </div>
-                                        </div>
+
+                                                <?php
+                                        }
+                                        ?>
+
 
 
 
@@ -401,110 +266,36 @@
                 <div class="row">
                         <div class="col-md-12">
 
-                                <h1><span class="popular">product Category 1</span></h1>
+                                <h1><span class="popular"><?php echo $cat1->category_name; ?></span></h1>
 
                                 <div class="productz-3">
-
-                                        <div class="item margins">
-                                                <div class="main">
-                                                        <div class="lak">
-                                                                <a href="#"> <img class="img-responsive our" src="images/p3.jpg"></a>
-                                                                <div class="cart-img">
-                                                                        <h3><a class="title_1" href="#">Signal TB Inside Clean Mar</a></h3>
-                                                                        <h4><a class="title_2" href="#">AED : 19.00</a></h4>
-                                                                        <a class="cart-btn" href="#"><i class="fa baskets fa-shopping-basket"></i>Add to baskest</a>
-                                                                </div>
-
-                                                                <div class="overlays"></div>
-                                                        </div>
-                                                </div>
-                                        </div>
-                                        <div class="item margins">
-                                                <div class="main">
-                                                        <a href="#">
+                                        <?php
+                                        foreach ($pcat1 as $pcats1) {
+                                                ?>
+                                                <div class="item margins">
+                                                        <div class="main">
                                                                 <div class="lak">
-                                                                        <img class="img-responsive our" src="images/p1.jpg">
+                                                                        <a href="#"> <img class="img-responsive our" src="<?php echo Yii::app()->baseUrl; ?>/uploads/products/1000/<?php echo $pcats1->id; ?>/big.<?php echo $pcats1->main_image; ?>"></a>
                                                                         <div class="cart-img">
-                                                                                <h3><a class="title_1" href="#">Coca Cola</a></h3>
-                                                                                <h4><a class="title_2" href="#">AED : 1.50</a></h4>
-                                                                                <a class="cart-btn" href="#"><i class="fa baskets fa-shopping-basket"></i>Add to baskest</a>
+                                                                                <h3><a class="title_1" href="<?php echo Yii::app()->baseUrl; ?>/products/detail/name/<?php echo $pcats1->canonical_name; ?>"><?php echo $pcats1->product_name; ?></a></h3>
+                                                                                <h4><a class="title_2" href="#">AED : <?php
+                                                                                                if (($_SESSION['location']) && ($_SESSION['location'] == 'MARINA')) {
+
+                                                                                                        echo $pcats1->price_in_marina;
+                                                                                                } else {
+                                                                                                        echo $pcats1->price_in_barsha;
+                                                                                                }
+                                                                                                ?></a></h4>
+                                                                                <a class="cart-btn" href="#"><i class="fa baskets fa-shopping-basket"></i>Add to basket</a>
                                                                         </div>
 
                                                                         <div class="overlays"></div>
-
-
-                                                                        <img class="img-responsive off-tag" src="images/tag.png">
-
                                                                 </div>
-                                                        </a>
-                                                </div>
-                                        </div>
-
-                                        <div class="item margins">
-                                                <div class="main">
-                                                        <div class="lak">
-                                                                <a href="#"> <img class="img-responsive our" src="images/p2.jpg"></a>
-                                                                <div class="cart-img">
-                                                                        <h3><a class="title_1" href="#">Nescafe Classic 100gm</a></h3>
-                                                                        <h4><a class="title_2" href="#">AED : 16.00</a></h4>
-                                                                        <a class="cart-btn" href="#"><i class="fa baskets fa-shopping-basket"></i>Add to baskest</a>
-                                                                </div>
-
-                                                                <div class="overlays"></div>
                                                         </div>
                                                 </div>
-                                        </div>
-
-
-
-
-
-                                        <div class="item margins">
-                                                <div class="main">
-                                                        <div class="lak">
-                                                                <a href="#"><img class="img-responsive our" src="images/p4.jpg"></a>
-                                                                <div class="cart-img">
-                                                                        <h3><a class="title_1" href="#">Lays Chips Salt 170GM</a></h3>
-                                                                        <h4><a class="title_2" href="#">AED : 6.75</a></h4>
-                                                                        <a class="cart-btn" href="#"><i class="fa baskets fa-shopping-basket"></i>Add to baskest</a>
-                                                                </div>
-
-                                                                <div class="overlays"></div>
-                                                        </div>
-                                                </div>
-                                        </div>
-
-
-                                        <div class="item margins">
-                                                <div class="main">
-                                                        <div class="lak">
-                                                                <a href="#">  <img class="img-responsive our" src="images/p5.jpg"></a>
-                                                                <div class="cart-img">
-                                                                        <h3><a class="title_1" href="#">Floridas Natural Growers ..</a></h3>
-                                                                        <h4><a class="title_2" href="#">AED : 11.50</a></h4>
-                                                                        <a class="cart-btn" href="#"><i class="fa baskets fa-shopping-basket"></i>Add to baskest</a>
-                                                                </div>
-
-                                                                <div class="overlays"></div>
-                                                        </div>
-                                                </div>
-                                        </div>
-
-
-                                        <div class="item margins">
-                                                <div class="main">
-                                                        <div class="lak">
-                                                                <a href="#"><img class="img-responsive our" src="images/p6.jpg"></a>
-                                                                <div class="cart-img">
-                                                                        <h3><a class="title_1" href="#">Hero Baby Apple Juice 130ml</a></h3>
-                                                                        <h4><a class="title_2" href="#">AED : 5.75</a></h4>
-                                                                        <a class="cart-btn" href="#"><i class="fa baskets fa-shopping-basket"></i>Add to baskest</a>
-                                                                </div>
-
-                                                                <div class="overlays"></div>
-                                                        </div>
-                                                </div>
-                                        </div>
+                                                <?php
+                                        }
+                                        ?>
 
 
 
@@ -526,106 +317,44 @@
                 <div class="row">
                         <div class="col-md-12">
 
-                                <h1><span class="popular">product Category 2</span></h1>
+                                <h1><span class="popular"><?php echo $cat2->category_name; ?></span></h1>
 
                                 <div class="productz-4">
-                                        <div class="item margins">
-                                                <div class="main">
-                                                        <a href="#">
-                                                                <div class="lak">
-                                                                        <img class="img-responsive our" src="images/p1.jpg">
-                                                                        <div class="cart-img">
-                                                                                <h3><a class="title_1" href="#">Coca Cola</a></h3>
-                                                                                <h4><a class="title_2" href="#">AED : 1.50</a></h4>
-                                                                                <a class="cart-btn" href="#"><i class="fa baskets fa-shopping-basket"></i>Add to baskest</a>
+                                        <?php
+                                        foreach ($pcat2 as $pcats2) {
+                                                ?>
+                                                <div class="item margins">
+                                                        <div class="main">
+                                                                <a href="#">
+                                                                        <div class="lak">
+                                                                                <img class="img-responsive our" src="<?php echo Yii::app()->baseUrl; ?>/uploads/products/1000/<?php echo $pcats2->id; ?>/big.<?php echo $pcats2->main_image; ?>">
+                                                                                <div class="cart-img">
+                                                                                        <h3><a class="title_1" href="#"><?php echo $pcats2->product_name; ?></a></h3>
+                                                                                        <h4><a class="title_2" href="#">AED : <?php
+                                                                                                        if (($_SESSION['location']) && ($_SESSION['location'] == 'MARINA')) {
+
+                                                                                                                echo $pcats2->price_in_marina;
+                                                                                                        } else {
+                                                                                                                echo $pcats2->price_in_barsha;
+                                                                                                        }
+                                                                                                        ?></a></h4>
+                                                                                        <a class="cart-btn" href="#"><i class="fa baskets fa-shopping-basket"></i>Add to basket</a>
+                                                                                </div>
+
+                                                                                <div class="overlays"></div>
+
+
+                                                                                <img class="img-responsive off-tag" src="images/tag.png">
+
                                                                         </div>
-
-                                                                        <div class="overlays"></div>
-
-
-                                                                        <img class="img-responsive off-tag" src="images/tag.png">
-
-                                                                </div>
-                                                        </a>
-                                                </div>
-                                        </div>
-
-                                        <div class="item margins">
-                                                <div class="main">
-                                                        <div class="lak">
-                                                                <a href="#"> <img class="img-responsive our" src="images/p2.jpg"></a>
-                                                                <div class="cart-img">
-                                                                        <h3><a class="title_1" href="#">Nescafe Classic 100gm</a></h3>
-                                                                        <h4><a class="title_2" href="#">AED : 16.00</a></h4>
-                                                                        <a class="cart-btn" href="#"><i class="fa baskets fa-shopping-basket"></i>Add to baskest</a>
-                                                                </div>
-
-                                                                <div class="overlays"></div>
+                                                                </a>
                                                         </div>
                                                 </div>
-                                        </div>
-                                        <div class="item margins">
-                                                <div class="main">
-                                                        <div class="lak">
-                                                                <a href="#"><img class="img-responsive our" src="images/p6.jpg"></a>
-                                                                <div class="cart-img">
-                                                                        <h3><a class="title_1" href="#">Hero Baby Apple Juice 130ml</a></h3>
-                                                                        <h4><a class="title_2" href="#">AED : 5.75</a></h4>
-                                                                        <a class="cart-btn" href="#"><i class="fa baskets fa-shopping-basket"></i>Add to baskest</a>
-                                                                </div>
-
-                                                                <div class="overlays"></div>
-                                                        </div>
-                                                </div>
-                                        </div>
+                                                <?php
+                                        }
+                                        ?>
 
 
-                                        <div class="item margins">
-                                                <div class="main">
-                                                        <div class="lak">
-                                                                <a href="#"> <img class="img-responsive our" src="images/p3.jpg"></a>
-                                                                <div class="cart-img">
-                                                                        <h3><a class="title_1" href="#">Signal TB Inside Clean Mar</a></h3>
-                                                                        <h4><a class="title_2" href="#">AED : 19.00</a></h4>
-                                                                        <a class="cart-btn" href="#"><i class="fa baskets fa-shopping-basket"></i>Add to baskest</a>
-                                                                </div>
-
-                                                                <div class="overlays"></div>
-                                                        </div>
-                                                </div>
-                                        </div>
-
-
-                                        <div class="item margins">
-                                                <div class="main">
-                                                        <div class="lak">
-                                                                <a href="#"><img class="img-responsive our" src="images/p4.jpg"></a>
-                                                                <div class="cart-img">
-                                                                        <h3><a class="title_1" href="#">Lays Chips Salt 170GM</a></h3>
-                                                                        <h4><a class="title_2" href="#">AED : 6.75</a></h4>
-                                                                        <a class="cart-btn" href="#"><i class="fa baskets fa-shopping-basket"></i>Add to baskest</a>
-                                                                </div>
-
-                                                                <div class="overlays"></div>
-                                                        </div>
-                                                </div>
-                                        </div>
-
-
-                                        <div class="item margins">
-                                                <div class="main">
-                                                        <div class="lak">
-                                                                <a href="#">  <img class="img-responsive our" src="images/p5.jpg"></a>
-                                                                <div class="cart-img">
-                                                                        <h3><a class="title_1" href="#">Floridas Natural Growers ..</a></h3>
-                                                                        <h4><a class="title_2" href="#">AED : 11.50</a></h4>
-                                                                        <a class="cart-btn" href="#"><i class="fa baskets fa-shopping-basket"></i>Add to baskest</a>
-                                                                </div>
-
-                                                                <div class="overlays"></div>
-                                                        </div>
-                                                </div>
-                                        </div>
                                 </div>
 
                         </div>
