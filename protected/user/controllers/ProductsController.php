@@ -11,7 +11,7 @@ class ProductsController extends Controller {
         }
 
         public function actionCategory($name) {
-
+                echo 'hhhhh';
                 $parent = ProductCategory::model()->findByAttributes(array('canonical_name' => $name));
                 if (empty($parent)) {
                         $this->render('ProductNotfound');
