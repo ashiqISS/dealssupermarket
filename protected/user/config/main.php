@@ -7,6 +7,7 @@
 $user = dirname(dirname(__FILE__));
 Yii::setPathOfAlias('user', $user);
 Yii::setPathOfAlias('captcha', dirname(__FILE__) . '/../extensions/captchaExtended-1.0.2');
+Yii::setPathOfAlias('bootstrap', dirname(__FILE__) . '/../extensions/bootstrap');
 return array(
     'timeZone' => 'Asia/Calcutta',
     'basePath' => dirname($user),
@@ -50,6 +51,9 @@ return array(
           )
           ), */
         // other clientScript config
+        ),
+        'bootstrap' => array(
+            'class' => 'bootstrap.components.Bootstrap',
         ),
         'widgetFactory' => array(
             'widgets' => array(

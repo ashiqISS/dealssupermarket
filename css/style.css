@@ -1718,12 +1718,40 @@ button.btn.continue.btn-default {
 .sidebar ul li a:hover {
     color: #fff;
 }
+.sidebaractive{
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px !important;
+    font-weight: 400;
+    text-align: left;
+    display: block;
+    color: #fff !important;
+    background-color: #374473;
+    
+    
+}
+.sidebaractive a{
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px !important;
+    font-weight: 400;
+    text-align: left;
+    display: block;
+    color: #fff !important;
+    
+    
+}
 
 .sidebar ul li:last-child {
       border-bottom: 1px solid #ccc;
 }
-
-
+ .errorMessage {
+        color: red;
+    }
+.help-block {
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    color: #FF0000;
+}
 
 /*.sidebar ul li:before {
     position: absolute;

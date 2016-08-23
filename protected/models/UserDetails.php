@@ -26,6 +26,9 @@
 class UserDetails extends CActiveRecord {
 
         public $verifyCode;
+        public $old_password;
+        public $new_password;
+        public $repeat_password;
 
         /**
          * @return string the associated database table name
@@ -42,19 +45,24 @@ class UserDetails extends CActiveRecord {
                 // will receive user inputs.
                 return array(
                     array('first_name, last_name,phone_no_1,email,password,confirm,gender', 'required'),
+                    array('first_name, last_name', 'match', 'pattern' => '/^[a-zA-Z ]+$/'),
                     array('newsletter, status, phone_no_1, phone_no_2,CB, UB,email_verification,verify_code', 'numerical', 'integerOnly' => true),
                     array('first_name, last_name, email', 'length', 'max' => 100),
 //                    array('country', 'length', 'max' => 50),
                     array('password, confirm', 'length', 'max' => 225),
                     array('DOU', 'safe'),
                     array('email', 'unique'),
+                    //Change password rules
+                    array('old_password, new_password, repeat_password', 'required', 'on' => 'changePwd'),
+                    array('old_password', 'findPasswords', 'on' => 'changePwd'),
+                    array('repeat_password', 'compare', 'compareAttribute' => 'new_password', 'on' => 'changePwd'),
                     // array('newsletter', 'numerical', 'min' => 1, 'max' => 1,'message'=>''),
                     // The following rule is used by search().
                     // @todo Please remove those attributes that should not be searched.
                     array('id, first_name, last_name,dob, gender,email, phone_no_1, phone_no_2, password, confirm, newsletter, status,last_login', 'safe', 'on' => 'search'),
                     array('first_name,last_name,dob,password,email,confirm', 'required', 'on' => 'create'),
                     array('email', 'email', 'on' => 'create'),
-                    array('verifyCode', 'captcha', 'allowEmpty' => !CCaptcha::checkRequirements()),
+                        //array('verifyCode', 'captcha', 'allowEmpty' => !CCaptcha::checkRequirements(), 'required', 'on' => 'create'),
                 );
         }
 
@@ -140,6 +148,14 @@ class UserDetails extends CActiveRecord {
                         'pageSize' => 20,
                     ),
                 ));
+        }
+
+        //matching the old password with your existing password.
+        public function findPasswords($attribute, $params) {
+                $user = UserDetails::model()->findByAttributes(array('id' => Yii::app()->session['user']['id']));
+
+                if($user->password != md5($this->old_password))
+                        $this->addError($attribute, 'Old password is incorrect.');
         }
 
         /**
