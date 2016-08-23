@@ -11,7 +11,6 @@ class ProductsController extends Controller {
         }
 
         public function actionCategory($name) {
-                echo 'hhhhh';
                 $parent = ProductCategory::model()->findByAttributes(array('canonical_name' => $name));
                 if (empty($parent)) {
                         $this->render('ProductNotfound');
@@ -73,70 +72,22 @@ class ProductsController extends Controller {
         }
 
         public function actionDetail($name) {
-                $product_view = new ProductViewed;
+
                 $prduct = Products::model()->findByAttributes(array('canonical_name' => $name, 'status' => 1));
-                $recently = '';
-                $related_products = explode(",", $prduct->related_products);
 
                 if (Yii::app()->session['user'] != '' && Yii::app()->session['user'] != NULL) {
                         $user_id = Yii::app()->session['user']['id'];
-                        $product_view_exist = ProductViewed::model()->findByAttributes(array('user_id' => $user_id, 'product_id' => $prduct->id));
-                        if ($product_view_exist == NULL) {
-                                $product_view->date = date('Y-m-d');
-                                $product_view->product_id = $prduct->id;
-                                $product_view->session_id = NULL;
-                                $product_view->user_id = $user_id;
-                                if ($prduct->id != '') {
-                                        $product_view->save(FALSE);
-                                }
-                        }
-//                        $recently = ProductViewed::model()->findAllByAttributes(array('user_id' => $user_id), array('order' => 'date DESC', 'condition' => 'select distinct(product_id)'));
-                        $recently = ProductViewed::model()->findAll(array('select' => 't.product_id', 'distinct' => true), array('condition' => 'user_id = ' . $user_id));
                 } else {
                         if (!isset(Yii::app()->session['temp_user'])) {
                                 Yii::app()->session['temp_user'] = microtime(true);
                         }
-                        $sessonid = Yii::app()->session['temp_user'];
-                        $product_view_exist = ProductViewed::model()->findByAttributes(array('session_id' => $sessonid, 'product_id' => $prduct->id));
-
-                        if (empty($product_view_exist) && $product_view_exist == NULL) {
-                                $product_view->date = date('Y-m-d');
-                                $product_view->product_id = $prduct->id;
-                                $product_view->session_id = $sessonid;
-                                $product_view->user_id = NULL;
-                                if ($prduct->id != '') {
-                                        $product_view->save(FALSE);
-                                }
-                        }
-                        $recently = ProductViewed::model()->findAllByAttributes(array('session_id' => $sessonid), array('order' => 'date DESC'));
                 }
-                $model = new ProductEnquiry('create');
-                if (isset($_POST['ProductEnquiry'])) {
 
-                        $model->attributes = $_POST['ProductEnquiry'];
-                        $model->name = $_POST['ProductEnquiry']['name'];
-                        $model->status = 1;
-                        $model->requirement = $_POST['ProductEnquiry']['requirement'];
-                        if ($model->validate()) {
-                                if ($model->save()) {
-                                        $celib_history = new CelibStyleHistory;
-                                        $celib_history->enq_id = $model->id;
-                                        $celib_history->status = 1;
-//                                        $celib_history->link = 0;
-                                        $celib_history->measurement_id = 0;
-                                        $celib_history->payment_id = 0;
-                                        $celib_history->pay_amount = 0;
-                                        if ($celib_history->save()) {
-                                                Yii::app()->user->setFlash('enuirysuccess', "Your Enquiry Send Successfully ");
-                                                $this->ProductEnquiryMail($model);
-                                                $model->unsetAttributes();
-                                        }
-                                }
-                        }
-                }
                 if (!empty($prduct)) {
-                        $this->render('detailed', array('product' => $prduct, 'model' => $model, 'recently' => $recently, 'related_products' => $related_products));
+
+                        $this->render('detailed', array('product' => $prduct));
                 } else {
+
                         $this->redirect(array('Site/Error'));
                 }
         }
