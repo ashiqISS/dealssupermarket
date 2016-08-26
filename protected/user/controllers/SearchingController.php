@@ -29,6 +29,7 @@ class SearchingController extends Controller {
         public function actionSearchList() {
 
                 if (isset($_REQUEST['Keyword'])) {
+
                         $searchterm = $_REQUEST['Keyword'];
 
                         $dataProvider = new CActiveDataProvider('Products', array(
@@ -39,6 +40,7 @@ class SearchingController extends Controller {
                         );
 
                         $this->render('searchresult', array('dataProvider' => $dataProvider, 'file_name' => '_searchresult', 'parameter' => $_REQUEST['saerchterm'], 'search_parm' => $category, 'searchterm' => $searchterm));
+
                         exit;
                 }
                 $dataProvider1 = new CActiveDataProvider('ProductCategory', array(

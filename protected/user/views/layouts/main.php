@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
         <head>
-                <title>Deals</title>
+                <title>Deals Supermarket</title>
                 <meta charset="UTF-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 <link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
@@ -105,8 +105,8 @@
                                                                         <li>
                                                                                 <div class="form-mob">
 
-                                                                                        <form action="action_page.php">
-                                                                                                <input type="search" class="searchbox-two" name="googlesearch" placeholder="Search" vk_1a558="subscribed">
+                                                                                        <form action="<?php echo Yii::app()->baseUrl; ?>/index.php/searching/SearchList">
+                                                                                                <input type="search" class="searchbox-two" name="Keyword" placeholder="Search" vk_1a558="subscribed">
                                                                                         </form>
 
 
@@ -114,7 +114,7 @@
 
 
                                                                         </li>
-                                                                        <li><a href="#"><span>Baby Products</span></a></li>
+                                                                      <!--  <li><a href="#"><span>Baby Products</span></a></li>
 
 
 
@@ -133,10 +133,34 @@
 
 
                                                                         <li><a href="#"><span>Beverages</span></a></li>
-                                                                        <li><a href="#"><span>Baby Products</span></a></li>
+                                                                        <li><a href="#"><span>Baby Products</span></a></li>-->
+
+
+                                                                        <?php
+                                                                        $main_cats = ProductCategory::model()->findAllByAttributes(array(), array('condition' => 'id = parent'));
+                                                                        foreach ($main_cats as $main_cat) {
+                                                                                $subcats = ProductCategory::model()->findAllByAttributes(array('parent' => $main_cat->id), array('condition' => 'id !=' . $main_cat->id));
+                                                                                $main_menus = Yii::app()->request->baseUrl . "/index.php/products/category/name/" . $main_cat->canonical_name;
+                                                                                ?>
+                                                                                <li class="has-sub"><a href="<?php echo $main_menus; ?>"><span><?php echo $main_cat->category_name; ?></span></a>
+                                                                                        <ul>
+                                                                                                <?php
+                                                                                                foreach ($subcats as $cats) {
+                                                                                                        $sub_menus = Yii::app()->request->baseUrl . "/index.php/products/category/name/" . $cats->canonical_name;
+                                                                                                        ?>
+
+                                                                                                        <li><a href="<?php echo $sub_menus; ?>"><span><?php echo $cats->category_name; ?></span></a></li>
 
 
 
+                                                                                                        <?php
+                                                                                                }
+                                                                                                ?>
+                                                                                        </ul>
+                                                                                </li>
+                                                                                <?php
+                                                                        }
+                                                                        ?>
                                                                 </ul>
                                                         </div>
 
@@ -365,14 +389,16 @@
                                                 <div class="col-md-5">
 
                                                         <div id="custom-search-input">
-                                                                <div class="input-group col-md-12">
-                                                                        <input type="text" class="form-control input-lg multiples" placeholder="Search Products" />
-                                                                        <span class="input-group-btn">
-                                                                                <button class="btn btn-info btn-lg" type="button">
-                                                                                        <i class="glyphicon glyphicon-search"></i>
-                                                                                </button>
-                                                                        </span>
-                                                                </div>
+                                                                <form name="frm" action="<?php echo Yii::app()->baseUrl; ?>/index.php/searching/SearchList" method="POST">
+                                                                        <div class="input-group col-md-12">
+                                                                                <input type="text" class="form-control input-lg multiples" name="Keyword" placeholder="Search Products" />
+                                                                                <span class="input-group-btn">
+                                                                                        <button class="btn btn-info btn-lg" type="button">
+                                                                                                <i class="glyphicon glyphicon-search"></i>
+                                                                                        </button>
+                                                                                </span>
+                                                                        </div>
+                                                                </form>
                                                         </div>
                                                 </div>
                                                 <div class="col-md-2 col-xs-12">

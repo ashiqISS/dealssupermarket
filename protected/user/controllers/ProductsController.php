@@ -19,18 +19,18 @@ class ProductsController extends Controller {
                 $category = ProductCategory::model()->findAllByAttributes(array('parent' => $parent->parent));
                 $cats = ProductCategory::model()->findAllByattributes(array('parent' => $parent->id), array('condition' => "id != $parent->id"));
 
-                if (isset($_POST['category'])) {
-                        $categ = $_POST['category'];
-                        Yii::app()->session['sort_id'] = $_POST['category'];
-                } else {
-                        $categ = '';
-                }
-                $dataProvider = Yii::app()->Menu->MenuCategories($cats, $parent, $categ, $min = '', $max = '', $size = '');
+                /* if (isset($_POST['category'])) {
+                  $categ = $_POST['category'];
+                  Yii::app()->session['sort_id'] = $_POST['category'];
+                  } else {
+                  $categ = '';
+                  } */
+                $dataProvider = Yii::app()->Menu->MenuCategories($cats, $parent, $categ = '', $min = '', $max = '', $size = '');
 
-                if (isset(Yii::app()->session['temp_product_filter'])) {
-                        unset(Yii::app()->session['temp_product_filter']);
-                        unset(Yii::app()->session['temp_product_filter_check']);
-                }
+                /* if (isset(Yii::app()->session['temp_product_filter'])) {
+                  unset(Yii::app()->session['temp_product_filter']);
+                  unset(Yii::app()->session['temp_product_filter_check']);
+                  } */
 
                 $this->render('index', array('dataProvider' => $dataProvider, 'parent' => $parent, 'category' => $category, 'name' => $name));
         }

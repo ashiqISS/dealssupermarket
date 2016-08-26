@@ -14,6 +14,7 @@
 class MenuCategory extends CApplicationComponent {
 
         public function MenuCategories($cats, $parent, $categ, $min_, $max_, $size) {
+
                 if (!empty($min_) && !empty($max_)) {
                         $min = $this->currencychange($min_);
                         $max = $this->currencychange($max_);
@@ -38,12 +39,12 @@ class MenuCategory extends CApplicationComponent {
                         }
                 }
                 $date = date('Y-m-d');
-                $prod_ids = DealProducts::model()->findByAttributes(array('date' => $date))->deal_products;
-                if (!empty($prod_ids)) {
-                        $product_id = 'id not in(' . $prod_ids . ') ';
-                } else {
+                //  $prod_ids = DealProducts::model()->findByAttributes(array('date' => $date))->deal_products;
+                //  if (!empty($prod_ids)) {
+                //          $product_id = 'id not in(' . $prod_ids . ') ';
+                //  } else {
 //                        $product_id = 'id not in(' . $prod_ids . ') ';
-                }
+                //  }
                 //$product_id = 'id not in(' . $prod_ids . ') ';
 //                var_dump($find_in_set);
 //                exit;

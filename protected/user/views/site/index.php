@@ -86,7 +86,7 @@
                                                 <div class="zoom-img">
                                                         <a href="#"><img class="img-responsive bod" src="<?php echo Yii::app()->baseUrl; ?>/uploads/products/1000/<?php echo $pdtbanners->id; ?>/special.<?php echo $pdtbanners->special_product_image; ?>"></a>
                                                 </div>
-                                                <a class="now" href="#">Shop Now<i class="fa arr fa-angle-right"></i></a>
+                                                <a class="now" href="<?php echo Yii::app()->baseUrl; ?>/products/category/name/<?php echo $pdtbanners->canonical_name; ?>">Shop Now<i class="fa arr fa-angle-right"></i></a>
                                         </div>
                                 </div>
                                 <?php
@@ -98,51 +98,51 @@
         </div>
 
 
-        <div class="container div-23">
-                <div class="row">
-                        <div class="col-md-3 col-xs-6 likes">
-                                <a href="#">
-                                        <img class="img-responsive cen" src="images/r1.jpg">
+        <!-- <div class="container div-23">
+                 <div class="row">
+                         <div class="col-md-3 col-xs-6 likes">
+                                 <a href="#">
+                                         <img class="img-responsive cen" src="images/r1.jpg">
 
 
-                                        <h3>Baby Products</h3>
-                                        <img class="img-responsive itemz" src="images/icon.png">
-                                </a>
-                        </div>
+                                         <h3>Baby Products</h3>
+                                         <img class="img-responsive itemz" src="images/icon.png">
+                                 </a>
+                         </div>
 
-                        <div class="col-md-3 col-xs-6 likes">
-                                <a href="#">
-                                        <img class="img-responsive cen" src="images/r2.jpg">
-
-
-                                        <h3>Bakery Products</h3>
-                                        <img class="img-responsive itemz" src="images/icon-2.png">
-                                </a>
-                        </div>
-
-                        <div class="col-md-3 col-xs-6 likes">
-                                <a href="#">
-                                        <img class="img-responsive cen" src="images/r3.jpg">
+                         <div class="col-md-3 col-xs-6 likes">
+                                 <a href="#">
+                                         <img class="img-responsive cen" src="images/r2.jpg">
 
 
-                                        <h3>Beverages</h3>
-                                        <img class="img-responsive itemz" src="images/icon3.png">
-                                </a>
-                        </div>
+                                         <h3>Bakery Products</h3>
+                                         <img class="img-responsive itemz" src="images/icon-2.png">
+                                 </a>
+                         </div>
 
-                        <div class="col-md-3 col-xs-6 likes">
-                                <a href="#">
-                                        <img class="img-responsive cen" src="images/r4.jpg">
+                         <div class="col-md-3 col-xs-6 likes">
+                                 <a href="#">
+                                         <img class="img-responsive cen" src="images/r3.jpg">
 
 
-                                        <h3>Butchery</h3>
-                                        <img class="img-responsive itemz" src="images/icon-4.png">
-                                </a>
-                        </div>
+                                         <h3>Beverages</h3>
+                                         <img class="img-responsive itemz" src="images/icon3.png">
+                                 </a>
+                         </div>
 
-                </div>
+                         <div class="col-md-3 col-xs-6 likes">
+                                 <a href="#">
+                                         <img class="img-responsive cen" src="images/r4.jpg">
 
-        </div>
+
+                                         <h3>Butchery</h3>
+                                         <img class="img-responsive itemz" src="images/icon-4.png">
+                                 </a>
+                         </div>
+
+                 </div>
+
+         </div>-->
 </section>
 
 
@@ -181,7 +181,7 @@
                                                                         <div class="overlays"></div>
 
 
-                                                                        <img class="img-responsive off-tag" src="images/tag.png">
+                                                                        <img class="img-responsive off-tag" src="<?php echo Yii::app()->request->baseUrl; ?>/images/tag.png">
 
                                                                 </div>
 
@@ -253,7 +253,7 @@
         <div class="container">
                 <div class="row">
                         <div class="col-md-12">
-                                <img class="img-responsive chick" src="images/ad.jpg">
+                                <img class="img-responsive chick" src="<?php echo Yii::app()->request->baseUrl; ?>/images/ad.jpg">
                         </div>
                 </div>
         </div>
@@ -344,7 +344,7 @@
                                                                                 <div class="overlays"></div>
 
 
-                                                                                <img class="img-responsive off-tag" src="images/tag.png">
+                                                                                <img class="img-responsive off-tag" src="<?php echo Yii::app()->request->baseUrl; ?>/images/tag.png">
 
                                                                         </div>
                                                                 </a>
@@ -373,8 +373,8 @@
                         autoplaySpeed: 4000,
                         slidesToScroll: 1,
                         pauseOnHover: false,
-                        prevArrow: '<i id="prev_slide_3"><img src="images/prev.png"></i>',
-                        nextArrow: '<i id="next_slide_3"><img src="images/next.png"></i>',
+                        prevArrow: '<i id="prev_slide_3"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/prev.png"></i>',
+                        nextArrow: '<i id="next_slide_3"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/next.png"></i>',
                         responsive: [
                                 {
                                         breakpoint: 1000,
@@ -415,8 +415,8 @@
                         autoplaySpeed: 4000,
                         slidesToScroll: 1,
                         pauseOnHover: false,
-                        prevArrow: '<i id="prev_slide_3"><img src="images/prev.png"></i>',
-                        nextArrow: '<i id="next_slide_3"><img src="images/next.png"></i>',
+                        prevArrow: '<i id="prev_slide_3"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/prev.png"></i>',
+                        nextArrow: '<i id="next_slide_3"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/next.png"></i>',
                         responsive: [
                                 {
                                         breakpoint: 1000,
@@ -458,8 +458,8 @@
                         autoplaySpeed: 4000,
                         slidesToScroll: 1,
                         pauseOnHover: false,
-                        prevArrow: '<i id="prev_slide_3"><img src="images/prev.png"></i>',
-                        nextArrow: '<i id="next_slide_3"><img src="images/next.png"></i>',
+                        prevArrow: '<i id="prev_slide_3"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/prev.png"></i>',
+                        nextArrow: '<i id="next_slide_3"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/next.png"></i>',
                         responsive: [
                                 {
                                         breakpoint: 1000,
@@ -498,8 +498,8 @@
                         autoplaySpeed: 4000,
                         slidesToScroll: 1,
                         pauseOnHover: false,
-                        prevArrow: '<i id="prev_slide_3"><img src="images/prev.png"></i>',
-                        nextArrow: '<i id="next_slide_3"><img src="images/next.png"></i>',
+                        prevArrow: '<i id="prev_slide_3"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/prev.png"></i>',
+                        nextArrow: '<i id="next_slide_3"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/next.png"></i>',
                         responsive: [
                                 {
                                         breakpoint: 1000,
