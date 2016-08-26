@@ -422,15 +422,35 @@ class SiteController extends Controller {
                 $this->render('market_fresh', array('model' => $model, 'banner' => $banner, 'content' => $content));
         }
 
+        public function actionPromotion($details = '') {
+                $model = Promotion::model()->findAll(array('condition' => 'status=1'));
+                $banner = Banner::model()->find(array('condition' => 'page_id=3'));
+                $this->render('promotion', array('model' => $model, 'banner' => $banner));
+        }
+
         public function actionGallery($category = '') {
-                $model = MasterGallery::model()->findAll(array('condition' => 'status=1'));
+
+                // $model = MasterGallery::model()->findAll(array('condition' => 'status=1'));
+                $model = Yii::app()->db->createCommand()
+                        ->selectDistinct('name,canonical_name')
+                        ->from('master_gallery m')
+                        ->join('gallery g', 'm.id = g.category')
+                        ->where('m.status=:status', array(':status' => 1))
+                        ->queryAll();
+
                 if($category == '') {
-                        $content = Gallery::model()->find(array('condition' => 'status=1'));
+
+                        $contents = Gallery::model()->findAll(array('condition' => 'status=1'));
                 } else {
-                        $content = Gallery::model()->find(array('condition' => 'canonical_name="' . $content . '" and status=1'));
+                        $categoryInfo = MasterGallery::model()->find(array('condition' => 'canonical_name="' . $category . '"'));
+                        $contents = Gallery::model()->findAll(array('condition' => 'category="' . $categoryInfo->id . '" and status=1'));
+                }
+
+                if(empty($contents)) {
+                        $this->redirect(array('Site/Error'));
                 }
                 $banner = Banner::model()->find(array('condition' => 'page_id=2'));
-                $this->render('gallery', array('model' => $model, 'banner' => $banner, 'content' => $content));
+                $this->render('gallery', array('model' => $model, 'banner' => $banner, 'gallery' => $contents));
         }
 
         public function siteURL() {

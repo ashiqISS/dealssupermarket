@@ -35222,3 +35222,12 @@ Stack trace:
 REQUEST_URI=/dealssupermarket/admin.php/catalog/products/update/id/mpps/www/dealssupermarket/protected/admin/extensions/eckeditor/ECKEdit5.phpckeditor.js?t=B8DJ5M3
 HTTP_REFERER=http://localhost/dealssupermarket/admin.php/catalog/products/update/id/6
 ---
+2016/08/26 14:26:04 [warning] [application] Failed to set unsafe attribute "description" of "MasterGallery".
+in D:\Ampps\www\dealssupermarket\protected\admin\modules\masters\controllers\MasterGalleryController.php (94)
+in D:\Ampps\www\dealssupermarket\admin.php (13)
+2016/08/26 15:06:11 [warning] [application] Failed to set unsafe attribute "description" of "MasterGallery".
+in D:\Ampps\www\dealssupermarket\protected\admin\modules\masters\controllers\MasterGalleryController.php (94)
+in D:\Ampps\www\dealssupermarket\admin.php (13)
+2016/08/26 15:06:31 [warning] [application] Failed to set unsafe attribute "description" of "MasterGallery".
+in D:\Ampps\www\dealssupermarket\protected\admin\modules\masters\controllers\MasterGalleryController.php (94)
+in D:\Ampps\www\dealssupermarket\admin.php (13)

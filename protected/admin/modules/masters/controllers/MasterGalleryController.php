@@ -94,9 +94,11 @@ class MasterGalleryController extends Controller {
                         $model->attributes = $_POST['MasterGallery'];
                         $canonical = str_replace(" ", "-", strtolower($_POST['MasterGallery']['name']));
                         $model->canonical_name = $canonical;
+                        $model->status = $_POST['MasterGallery']['status'];
                         $model->UB = Yii::app()->session['admin']['id'];
                         if($model->save())
-                                $this->redirect(array('update', 'id' => $model->id));
+                                Gallery::model()->updateAll(array('status' => $model->status), 'category=' . $model->id);
+                        $this->redirect(array('update', 'id' => $model->id));
                 }
 
                 $this->render('update', array(

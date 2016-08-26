@@ -28,99 +28,43 @@
 
                 <ul>
                     <li><?php echo CHtml::link('All', array('site/Gallery')) ?></li>
-                    <?php foreach($model as $model1) {
+                    <?php
+                    foreach($model as $model1) {
                             ?>
-                            <li><?php echo CHtml::link($model1->name, array('site/MarketFresh/details/' . $model1->canonical_name)) ?></li>
+                            <li><?php echo CHtml::link($model1['name'], array('site/Gallery/category/' . $model1['canonical_name'])) ?></li>
                     <?php }
                     ?>
                 </ul>
             </div>
 
-
-
             <div class="col-md-9 colleges">
+                <?php
+                foreach($gallery as $gal) {
+                        ?>
 
 
-                <div class="col-md-4 col-sm-4 col-xs-6 gallerys vent">
-                    <div class="main-sub">
-                        <div class="thumbz thumb-height">
-                            <a href="images/t1.jpg" class="nivoimg" data-lightbox-gallery="gallery1">
-                                <img class="tea" src="images/t1.jpg" alt=""  width="100%"/>
-                                <div class="play"><i class="fa ds fa-plus"></i></div>
-                                <div class="overlays"></div>
-                            </a>
+
+                        <div class="col-md-4 col-sm-4 col-xs-6 gallerys vent">
+                            <div class="main-sub">
+                                <div class="thumbz thumb-height">
+                                    <a href="<?php echo Yii::app()->baseUrl; ?>/uploads/gallery/<?php echo $gal->id . "/$gal->id." . $gal->image; ?>" class="nivoimg" data-lightbox-gallery="gallery1">
+
+                                        <img  class="tea" width="100%" src="<?php echo Yii::app()->baseUrl; ?>/uploads/gallery/<?php echo $gal->id . "/medium." . $gal->image; ?>" alt="<?php echo $gal->title; ?>">
+
+
+
+                                        <div class="play"><i class="fa ds fa-plus"></i></div>
+                                        <div class="overlays"></div>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 col-sm-4 col-xs-6 gallerys vent">
-                    <div class="main-sub">
-                        <div class="thumbz thumb-height">
-                            <a href="images/t2.jpg" class="nivoimg" data-lightbox-gallery="gallery1">
-                                <img class="tea" src="images/t2.jpg" alt=""  width="100%"/>
-                                <div class="play"><i class="fa ds fa-plus"></i></div>
-                                <div class="overlays"></div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-4 col-xs-6 gallerys vent">
-                    <div class="main-sub">
-                        <div class="thumbz thumb-height">
-                            <a href="images/t3.jpg" class="nivoimg" data-lightbox-gallery="gallery1">
-                                <img class="tea" src="images/t3.jpg" alt=""  width="100%"/>
-                                <div class="play"><i class="fa ds fa-plus"></i></div>
-                                <div class="overlays"></div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="col-md-4 col-sm-4 col-xs-6 gallerys vent">
-                    <div class="main-sub">
-                        <div class="thumbz thumb-height">
-                            <a href="images/t4.jpg" class="nivoimg" data-lightbox-gallery="gallery1">
-                                <img class="tea" src="images/t4.jpg" alt=""  width="100%"/>
-                                <div class="play"><i class="fa ds fa-plus"></i></div>
-                                <div class="overlays"></div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
 
 
 
-                <div class="col-md-4 col-sm-4 col-xs-6 gallerys vent">
-                    <div class="main-sub">
-                        <div class="thumbz thumb-height">
-                            <a href="images/t5.jpg" class="nivoimg" data-lightbox-gallery="gallery1">
-                                <img class="tea" src="images/t5.jpg" alt=""  width="100%"/>
-                                <div class="play"><i class="fa ds fa-plus"></i></div>
-                                <div class="overlays"></div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="col-md-4 col-sm-4 col-xs-6 gallerys vent">
-                    <div class="main-sub">
-                        <div class="thumbz thumb-height">
-                            <a href="images/t6.jpg" class="nivoimg" data-lightbox-gallery="gallery1">
-                                <img class="tea" src="images/t6.jpg" alt=""  width="100%"/>
-                                <div class="play"><i class="fa ds fa-plus"></i></div>
-                                <div class="overlays"></div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-
-
-            </div>
-
-
+                        <?php
+                }
+                ?></div>
 
 
 
@@ -134,7 +78,7 @@
 <script src="<?php echo Yii::app()->baseUrl; ?>/js/nivo-lightbox.js" type="text/javascript"></script>
 <link rel="stylesheet" href="<?php echo Yii::app()->baseUrl; ?>/css/themes/default/default.css" type="text/css">
 
-<script>
+<script type="text/javascript">
         $(document).ready(function () {
             $('a.nivoimg').nivoLightbox({
                 keyboardNav: true
