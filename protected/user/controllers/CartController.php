@@ -110,22 +110,9 @@ class CartController extends Controller {
 
                 $canonical_name = $_REQUEST['cano_name'];
                 $qty = $_REQUEST['qty'];
-                $option_size = $_REQUEST['option_size'];
-                $option_color = $_REQUEST['option_color'];
-                $master_option_id = $_REQUEST['master_option'];
+
                 $id = Products::model()->findByAttributes(array('canonical_name' => $canonical_name))->id;
-                $check_option = MasterOptions::model()->findByAttributes(['product_id' => $id]);
-                if(!empty($check_option)) {
-                        $product_option_id = OptionDetails::model()->findByAttributes(['master_option_id' => $master_option_id, 'size_id' => $option_size, 'color_id' => $option_color, 'product_id' => $id]);
-                        if(!empty($product_option_id)) {
-                                $product_option = $product_option_id->id;
-                        } else {
-                                echo '9';
-                                exit;
-                        }
-                } else {
-                        $product_option = 0;
-                }
+
 
 
                 if(Yii::app()->session['user'] != '' && Yii::app()->session['user'] != NULL) {
@@ -144,33 +131,45 @@ class CartController extends Controller {
                 } else if(isset($sessonid)) {
                         $condition = "session_id= $sessonid";
                 }
-                if($product_option_id->id != 0) {
-                        $cart = Cart::model()->findByAttributes(array(), array('condition' => ($condition . ' and options =' . $product_option_id->id . ' and product_id=' . $id)));
-                } else {
-                        $cart = Cart::model()->findByAttributes(array(), array('condition' => ($condition . ' and product_id=' . $id)));
-                }
+
+                $cart = Cart::model()->findByAttributes(array(), array('condition' => ($condition . ' and product_id=' . $id)));
+
+
 
 
                 if(!empty($cart)) {
+
+
                         $cart->quantity = $cart->quantity + $qty;
                         $cart->save();
                         $cart_contents = Cart::model()->findAllByAttributes(array(), array('condition' => ($condition)));
 
                         if(!empty($cart_contents)) {
-                                echo ' <div class="drop_cart">';
+                                echo ' <div class="target-2">';
                                 foreach($cart_contents as $cart_content) {
-                                        $options = OptionDetails::model()->findbypk($cart_content->options);
-                                        $option_color = OptionCategory::model()->findByPk($options->color_id);
-                                        $option_size = OptionCategory::model()->findByPk($options->color_id);
+                                        // $options = OptionDetails::model()->findbypk($cart_content->options);
+                                        //$option_color = OptionCategory::model()->findByPk($options->color_id);
+                                        //  $option_size = OptionCategory::model()->findByPk($options->color_id);
                                         $prod_details = Products::model()->findByPk($cart_content->product_id);
                                         $folder = Yii::app()->Upload->folderName(0, 1000, $prod_details->id);
 
+
+//                                     //   if((Yii::app()->session['location']) && (Yii::app()->session['location'] == 'MARINA')) {
+//
+//                                                $product->price_in_marina;
+//                                        } else {
+//                                                $product->price_in_barsha;
+//                                        }
+
+
+
                                         $total = $cart_content->quantity * Yii::app()->Discount->DiscountAmount($prod_details);
 
-                                        $this->renderPartial('_cartaontents', array('cart_content' => $cart_content, 'option_color' => $option_color, 'option_size' => $option_size, 'prod_details' => $prod_details, 'folder' => $folder, 'total' => $total));
+                                        $this->renderPartial('_cartaontents', array('cart_content' => $cart_content, 'prod_details' => $prod_details, 'folder' => $folder, 'total' => $total));
 
                                         $subtotoal = $subtotoal + $total;
                                 }
+                                echo ' </div>';
                                 $this->renderPartial('_cartfooter', array('subtotoal' => $subtotoal));
                                 echo ' </div>';
                         } else {
@@ -183,14 +182,14 @@ class CartController extends Controller {
                         $model->session_id = $sessonid;
                         $model->product_id = $id;
                         $model->quantity = $qty;
-                        $model->options = $product_option;
+                        // $model->options = $product_option;
                         $model->date = date('Y-m-d');
                         if($model->save()) {
 
                                 $cart_contents = Cart::model()->findAllByAttributes(array(), array('condition' => ($condition)));
 
                                 if(!empty($cart_contents)) {
-                                        echo ' <div class="drop_cart">';
+                                        echo ' <div class="target-2">';
                                         foreach($cart_contents as $cart_content) {
                                                 $prod_details = Products::model()->findByPk($cart_content->product_id);
 
@@ -200,7 +199,7 @@ class CartController extends Controller {
                                                 $this->renderPartial('_cartaontents', array('cart_content' => $cart_content, 'prod_details' => $prod_details, 'folder' => $folder, 'total' => $total));
 
                                                 $subtotoal = $subtotoal + $total;
-                                        }
+                                        } echo ' </div>';
                                         $this->renderPartial('_cartfooter', array('subtotoal' => $subtotoal));
                                         echo ' </div>';
                                 } else {

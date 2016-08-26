@@ -1,7 +1,16 @@
-<div class="sub_total">
-        <div class="pull-left">ORDER SUB TOTAL</div>
-        <div class="pull-right"><?php echo Yii::app()->Currency->convert($subtotoal); ?></div>
-        <div class="clearfix"></div>
+
+<div class="clearfix"></div>
+
+
+<div class="subtotal-1"><span class="subs-1">subtotal</span></div>
+<div class="subtotal-2"><span class="subs-2"> <?php echo $subtotoal; ?> AED</span></div>
+
+
+a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/cart/Mycart/"><button type="submit" class="btn proceed-cart btn-default">My Shopping Bag / Checkout</button></a>
+<a class="btn-continue" href="<?php echo Yii::app()->request->baseUrl; ?>">CONTINUE SHOPPING</a>
+
 </div>
-<a class="btn-dark btn-full" href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/cart/Mycart/">MY SHOPPING BAG / CHECKOUT</a>
-<div class="text-center"><a class="btn-continue" href="<?php echo Yii::app()->request->baseUrl; ?>">CONTINUE SHOPPING</a></div>
+</div>
+
+
+

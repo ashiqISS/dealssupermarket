@@ -6,40 +6,64 @@ class DiscountPrice extends CApplicationComponent {
 
                 //discount rate value not equal to null//
 
-                if ($model->discount_rate != 0) {
+                if($model->discount_rate != 0) {
                         $today_deal_products = DealProducts::model()->findByAttributes(array('date' => date('Y-m-d')));
-                        if (!empty($today_deal_products)) {
+                        if(!empty($today_deal_products)) {
                                 $HiddenProducts = explode(',', $today_deal_products->deal_products);
-                                if (in_array($model->id, $HiddenProducts)) {
+                                if(in_array($model->id, $HiddenProducts)) {
 //                                        if ($product->discount_type == 1) {
 //                                                $discountRate = $product->price - $product->discount_rate;
 //                                        } else {
 //                                                $discountRate = $product->price - ( $product->price * ($product->discount_rate / 100));
 //                                        }
                                         $value = $this->DiscountType($model);
-                                        return Yii::app()->Currency->convert($value);
+                                        return $value;
                                 } else {
-                                        return Yii::app()->Currency->convert($model->price);
+
+                                        if((Yii::app()->session['location']) && (Yii::app()->session['location'] == 'MARINA')) {
+
+                                                return $product->price_in_marina;
+                                        } else {
+                                                return $product->price_in_barsha;
+                                        }
+
+                                        // return $model->price;
                                 }
                         } else {
-                                return Yii::app()->Currency->convert($model->price);
+
+                                if((Yii::app()->session['location']) && (Yii::app()->session['location'] == 'MARINA')) {
+
+                                        return $product->price_in_marina;
+                                } else {
+                                        return $product->price_in_barsha;
+                                }
+                                //return $model->price;
                         }
 
                         //check date for special price //
                         //no date limitation//
                 } else {
-                        return Yii::app()->Currency->convert($model->price);
+
+                        if((Yii::app()->session['location']) && (Yii::app()->session['location'] == 'MARINA')) {
+
+                                return $product->price_in_marina;
+                        } else {
+                                return $product->price_in_barsha;
+                        }
+
+
+                        // return $model->price;
                 }
         }
 
         public function DiscountAmount($model) {
 
                 //discount rate value not equal to null//
-                if ($model->discount_rate != 0) {
+                if($model->discount_rate != 0) {
                         $today_deal_products = DealProducts::model()->findByAttributes(array('date' => date('Y-m-d')));
-                        if (!empty($today_deal_products)) {
+                        if(!empty($today_deal_products)) {
                                 $HiddenProducts = explode(',', $today_deal_products->deal_products);
-                                if (in_array($model->id, $HiddenProducts)) {
+                                if(in_array($model->id, $HiddenProducts)) {
 //                                        if ($product->discount_type == 1) {
 //                                                $discountRate = $product->price - $product->discount_rate;
 //                                        } else {
@@ -62,26 +86,35 @@ class DiscountPrice extends CApplicationComponent {
         }
 
         public function DiscountType($data) {
-                if ($data->discount_type == 1) {
+                if($data->discount_type == 1) {
+
+                        if((Yii::app()->session['location']) && (Yii::app()->session['location'] == 'MARINA')) {
+
+                                $data->price = $product->price_in_marina;
+                        } else {
+                                $data->price = $product->price_in_barsha;
+                        }
+
                         $discountRate = $data->price - $data->discount_rate;
                 } else {
                         $discountRate = $data->price - ( $data->price * ($data->discount_rate / 100));
                 }
+
                 return $discountRate;
         }
 
         public function checks($model) {
-                if ($data->stock_availability == 1) {
+                if($data->stock_availability == 1) {
                         $new_from = $model->new_from;
                         $new_to = $model->new_to;
                         $today = date('Y-m-d');
-                        if (strtotime($new_from) <= strtotime($today) && strtotime($new_to) >= strtotime($today)) {
+                        if(strtotime($new_from) <= strtotime($today) && strtotime($new_to) >= strtotime($today)) {
                                 echo '<span class="label label-danger">New </span> &nbsp';
                         }
                         $sale_from = $model->sale_from;
                         $sale_to = $model->sale_to;
 
-                        if (strtotime($sale_from) <= strtotime($today) && strtotime($sale_to) >= strtotime($today)) {
+                        if(strtotime($sale_from) <= strtotime($today) && strtotime($sale_to) >= strtotime($today)) {
                                 echo '<span class = "label label-warning">Sale</span>';
                         }
                 } else {
@@ -90,4 +123,5 @@ class DiscountPrice extends CApplicationComponent {
         }
 
 }
+
 ?>
