@@ -175,8 +175,9 @@
                                                                                                 }
                                                                                                 ?>
                                                                                         </a></h4>
-                                                                                <a class="cart-btn" href="category.php"><i class="fa baskets fa-shopping-basket"></i>Add to basket</a>
-                                                                        </div>
+                                                                                <input id="after" name="quantity" type="hidden" value="1">
+                                                                                <input type = "hidden" value = "<?= $pops->canonical_name; ?>" id="cano_name_<?= $pops->id; ?>" name="cano_name">
+                                                                                <a class="cart-btn add_to_cart" id="<?= $pops->id; ?>" href="#"><i class="fa baskets fa-shopping-basket"></i>Add to basket</a> </div>
 
                                                                         <div class="overlays"></div>
 
@@ -229,8 +230,9 @@
                                                                                                         echo $fets->price_in_barsha;
                                                                                                 }
                                                                                                 ?></a></h4>
-                                                                                <a class="cart-btn" href="#"><i class="fa baskets fa-shopping-basket"></i>Add to basket</a>
-                                                                        </div>
+                                                                                <input id="after" name="quantity" type="hidden" value="1">
+                                                                                <input type = "hidden" value = "<?= $fets->canonical_name; ?>" id="cano_name_<?= $fets->id; ?>" name="cano_name">
+                                                                                <a class="cart-btn add_to_cart" id="<?= $fets->id; ?>" href="#"><i class="fa baskets fa-shopping-basket"></i>Add to basket</a>    </div>
 
                                                                         <div class="overlays"></div>
                                                                 </div>
@@ -286,8 +288,9 @@
                                                                                                         echo $pcats1->price_in_barsha;
                                                                                                 }
                                                                                                 ?></a></h4>
-                                                                                <a class="cart-btn" href="#"><i class="fa baskets fa-shopping-basket"></i>Add to basket</a>
-                                                                        </div>
+                                                                                <input id="after" name="quantity" type="hidden" value="1">
+                                                                                <input type = "hidden" value = "<?= $pcats1->canonical_name; ?>" id="cano_name_<?= $pcats1->id; ?>" name="cano_name">
+                                                                                <a class="cart-btn add_to_cart" id="<?= $pcats1->id; ?>" href="#"><i class="fa baskets fa-shopping-basket"></i>Add to basket</a>   </div>
 
                                                                         <div class="overlays"></div>
                                                                 </div>
@@ -338,7 +341,9 @@
                                                                                                                 echo $pcats2->price_in_barsha;
                                                                                                         }
                                                                                                         ?></a></h4>
-                                                                                        <a class="cart-btn" href="#"><i class="fa baskets fa-shopping-basket"></i>Add to basket</a>
+                                                                                        <input id="after" name="quantity" type="hidden" value="1">
+                                                                                        <input type = "hidden" value = "<?= $pcats2->canonical_name; ?>" id="cano_name_<?= $pcats2->id; ?>" name="cano_name">
+                                                                                        <a class="cart-btn add_to_cart" id="<?= $pcats2->id; ?>" href="#"><i class="fa baskets fa-shopping-basket"></i>Add to basket</a>
                                                                                 </div>
 
                                                                                 <div class="overlays"></div>

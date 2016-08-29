@@ -22,35 +22,37 @@
                 <script src="<?php echo Yii::app()->baseUrl; ?>/js/bootstrap.js"></script>
                 <script src="<?php echo Yii::app()->baseUrl; ?>/js/slick.min.js"></script>
                 <script src="<?php echo Yii::app()->baseUrl; ?>/js/simpleMobileMenu.js"></script>
+                <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/custom.js"></script>
+                <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/laksyah_main.js"></script>
                 <script>
                         var baseurl = "<?php print Yii::app()->request->baseUrl . "/index.php/"; ?>";
-                                        var basepath = "<?php print Yii::app()->basePath; ?>";
+                        var basepath = "<?php print Yii::app()->basePath; ?>";
                 </script>
                 <script type="text/javascript">
-                                        /* Location setting*/
+                        /* Location setting*/
 
-                                        $(document).ready(function() {
-                                        $('#locdropdown li a').click(function(e) {
+                        $(document).ready(function() {
+                                $('#locdropdown li a').click(function(e) {
                                         var txt = $(e.target).text();
                                         var t = txt + " <span class = 'caret' >";
-                                                $("#loc").html(t);
+                                        $("#loc").html(t);
 
-                                                        var baseUrl = "<?php echo Yii::app()->baseUrl; ?>";
+                                        var baseUrl = "<?php echo Yii::app()->baseUrl; ?>";
 
                                         if (txt != "")
-                                                                                                {
+                                        {
                                                 $.ajax({
-                                                                                                type: "GET",
-                                                                                                        url: baseUrl + '/Site/SetLocation',
-                                                                                                data: ({city: txt}),
-                                                                                        success: function(data)
-                                                                                {
-                                                                                location.reload();
-                                                                                        }
-                                                                                });
+                                                        type: "GET",
+                                                        url: baseUrl + '/Site/SetLocation',
+                                                        data: ({city: txt}),
+                                                        success: function(data)
+                                                        {
+                                                                location.reload();
+                                                        }
+                                                });
 
-                                                                        }
-                                                                else
+                                        }
+                                        else
                                         {
                                                 //alert("error");
                                         }
@@ -151,26 +153,6 @@
 
 
                                                                         </li>
-                                                                      <!--  <li><a href="#"><span>Baby Products</span></a></li>
-
-
-
-                                                                        <li class="has-sub"><a href="#"><span>Bakery Products</span></a>
-                                                                                <ul>
-                                                                                        <li><a href="#"><span>Engineering</span></a></li>
-                                                                                        <li><a href="#"><span>Business Administration</span></a></li>
-                                                                                        <li class="last"><a href='#'><span>Computer Application</span></a></li>
-                                                                                        <li class="last"><a href='#'><span>Media Science</span></a></li>
-                                                                                        <li class="last"><a href='#'><span>Hospital Management</span></a></li>
-                                                                                        <li class="last"><a href='#'><span>Future Campus School</span></a></li>
-                                                                                </ul>
-                                                                        </li>
-                                                                        <li><a href="#"><span>Beverages</span></a></li>
-                                                                        <li><a href="#"><span>Baby Products</span></a></li>
-
-
-                                                                        <li><a href="#"><span>Beverages</span></a></li>
-                                                                        <li><a href="#"><span>Baby Products</span></a></li>-->
 
 
                                                                         <?php
@@ -333,42 +315,7 @@
 
                                                 <div class="col-xs-7 d2">
                                                         <a href="#" class="cart-hover">
-                                                                <div class="mycart">
-                                                                        <div class="shopping_bag has_dropdown cart_btn">
-                                                                                <img class="base" src="<?php echo Yii::app()->baseUrl; ?>/images/bucket.jpg">
-                                                                                <div class="cart_items"></div>
 
-                                                                                <div class="target-2">
-                                                                                        <div class="item-1">
-                                                                                                <img src="<?php echo Yii::app()->baseUrl; ?>/images/p4.jpg" alt = "jQuery" />
-                                                                                                <h1>Product Name</h1>
-                                                                                                <h2>Price</h2>
-                                                                                                <h2>Lorem Lispum</h2>
-                                                                                        </div>
-
-                                                                                        <div class="item-1">
-                                                                                                <img src="<?php echo Yii::app()->baseUrl; ?>/images/p4.jpg" alt = "jQuery" />
-                                                                                                <h1>Product Name</h1>
-                                                                                                <h2>Price</h2>
-                                                                                                <h2>Lorem Lispum</h2>
-                                                                                        </div>
-
-
-                                                                                        <div class="clearfix"></div>
-
-
-                                                                                        <div class="subtotal-1"><span class="subs-1">subtotal</span></div>
-                                                                                        <div class="subtotal-2"><span class="subs-2"> Rs.20000</span></div>
-
-                                                                                        <button type="submit" class="btn proceed-cart btn-default">My Shopping Bag / Checkout</button>
-                                                                                </div>
-                                                                        </div>
-                                                                        <span class="bag_title">My Cart </span><span class="amount"></span>
-                                                                </div>
-
-                                                                <!--                                <div class="has-div">
-                                                                                                    lakshmi
-                                                                                                </div>-->
                                                         </a>
                                                 </div>
                                         </div>
@@ -489,7 +436,7 @@
 
                                                                         <span class="bag_title">My Cart </span><br/>
                                                                         <span class="amount"></span> AED
-                                                                        <div class="laksyah_dropdown cart_box" id="cart_box">
+                                                                        <div class="laksyah_dropdown  cart_box" id="cart_box">
                                                                         </div>
                                                                 </div>
                                                         </div>
@@ -623,14 +570,14 @@
 
                                         var body = $("html, body");
 
-                        var threshold = 90;
-                                if ($(window).scrollTop() <= threshold)
-                                        $('#static_cnts').removeClass('dropups');
+                                        var threshold = 90;
+                                        if ($(window).scrollTop() <= threshold)
+                                                $('#static_cnts').removeClass('dropups');
 
                                         else
-                                        $('#static_cnts').addClass('dropups');
+                                                $('#static_cnts').addClass('dropups');
 
-                                                });
+                                });
 
 
                         });
@@ -638,89 +585,64 @@
 
                 </script>
 
-
-
-<!--<script>
-    jQuery(document).ready(function () {
-        $(window).scroll(function () {
-
-            var body = $("html, body");
-
-            var threshold = 90;
-            if ($(window).scrollTop() <= threshold)
-                $('#static_cnt3').removeClass('drop');
-
-            else
-                $('#static_cnt3').addClass('drop');
-
-        });
-
-
-    });
-
-
-</script>-->
-
-
-
                 <script>
 
 
 
-                                        jQuery(window).scroll(function() {
-                                        var scrlTop = jQuery(window).scrollTop();
+                        jQuery(window).scroll(function() {
+                                var scrlTop = jQuery(window).scrollTop();
 
 
-                                                $window = jQuery(window);
+                                $window = jQuery(window);
 
-                                        function myanimations(doelement, doclass) {
-                                                $element = jQuery(doelement);
+                                function myanimations(doelement, doclass) {
+                                        $element = jQuery(doelement);
 
-                                $element.each(function() {
-                        $thisone = jQuery(this);
+                                        $element.each(function() {
+                                                $thisone = jQuery(this);
                                                 if ($thisone.offset().top + 200 < ($window.height() + $window.scrollTop()) &&
                                                         ($thisone.offset().top + $element.outerHeight()) + 170 > $window.scrollTop())
                                                 {
                                                         $thisone.removeClass('fadeOut');
-                                $thisone.addClass('animated');
-                                $thisone.addClass(doclass);
-                                } else {
-                                        $thisone.removeClass(doclass);
-                                        $thisone.addClass('fadeOut');
+                                                        $thisone.addClass('animated');
+                                                        $thisone.addClass(doclass);
+                                                } else {
+                                                        $thisone.removeClass(doclass);
+                                                        $thisone.addClass('fadeOut');
                                                 }
                                         });
-                                                }
+                                }
 
                                 myanimations('.ui-mains h1', 'fadeInUp');
-                                                        myanimations('.ui-mains p', 'fadeInUp m2');
+                                myanimations('.ui-mains p', 'fadeInUp m2');
 
                         });
 
                 </script>
                 <script type="text/javascript">
 
-                                                        jQuery(document).ready(function($) {
-                                                        $('.smobitrigger').smplmnu();
+                        jQuery(document).ready(function($) {
+                                $('.smobitrigger').smplmnu();
                         });
 
                 </script>
                 <script>
 
                         (function($) {
-                                                $(document).ready(function() {
-                                                        $('#cssmenu ul ul li:odd').addClass('odd');
-                                                        $('#cssmenu ul ul li:even').addClass('even');
-                                                $('#cssmenu > ul > li > a').click(function() {
-                                $('#cssmenu li').removeClass('active');
-                                $(this).closest('li').addClass('active');
-                        var checkElement = $(this).next();
-                        if ((checkElement.is('ul')) && (checkElement.is(':visible'))) {
-                        $(this).closest('li').removeClass('active');
-                        checkElement.slideUp('normal');
-                                }
-                                        if ((checkElement.is('ul')) && (!checkElement.is(':visible'))) {
-                                        $('#cssmenu ul ul:visible').slideUp('normal');
-                                                checkElement.slideDown('normal');
+                                $(document).ready(function() {
+                                        $('#cssmenu ul ul li:odd').addClass('odd');
+                                        $('#cssmenu ul ul li:even').addClass('even');
+                                        $('#cssmenu > ul > li > a').click(function() {
+                                                $('#cssmenu li').removeClass('active');
+                                                $(this).closest('li').addClass('active');
+                                                var checkElement = $(this).next();
+                                                if ((checkElement.is('ul')) && (checkElement.is(':visible'))) {
+                                                        $(this).closest('li').removeClass('active');
+                                                        checkElement.slideUp('normal');
+                                                }
+                                                if ((checkElement.is('ul')) && (!checkElement.is(':visible'))) {
+                                                        $('#cssmenu ul ul:visible').slideUp('normal');
+                                                        checkElement.slideDown('normal');
                                                 }
                                                 if ($(this).closest('li').find('ul').children().length == 0) {
                                                         return true;
@@ -728,23 +650,23 @@
                                                         return false;
                                                 }
                                         });
-                                                        });
+                                });
                         })(jQuery);
 
 
                 </script>
                 <script>
 
-                                                (function() {
+                        (function() {
                                 "use strict";
-                                                        $(window).load(function() {
+                                $(window).load(function() {
                                         $("#loader").fadeOut();
-                                                        $("#mask").delay(10000).fadeOut("slow");
-                                                });
+                                        $("#mask").delay(10000).fadeOut("slow");
+                                });
                         })(jQuery);
 
-                                                window.onload = function() {
-                                                        document.getElementById('mask').style.display = 'none';
+                        window.onload = function() {
+                                document.getElementById('mask').style.display = 'none';
                         };
                 </script>
 
@@ -752,30 +674,29 @@
 
                 <script type = "text/javascript" language = "javascript">
 
-                                                $(document).ready(function() {
-                                        $(".clickme").hover(function(event) {
-                        $(".target").toggle('slow');
+                        $(document).ready(function() {
+                                $(".clickme").hover(function(event) {
+                                        $(".target").toggle('slow');
                                 });
                         });
 
-                        </script>
+                </script>
                 <script type = "text/javascript" language = "javascript">
 
-                                        $(document).ready(function() {
-                                        $(".clickme-2").click(function(event) {
-                                $(".target-2").toggle('slow');
-                        });
+                        $(document).ready(function() {
+                                $(".clickme-2").click(function(event) {
+                                        $(".target-2").toggle('slow');
+                                });
                         });
 
-                        </script>
+                </script>
                 <script>
-                                $('.navicon').on('click', function(e) {
-                        e.preventDefault();
-                $(this).toggleClass('navicon--active');
+                        $('.navicon').on('click', function(e) {
+                                e.preventDefault();
+                                $(this).toggleClass('navicon--active');
                                 $('.toggle').toggleClass('toggle--active');
                         });
                 </script>
-                <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/custom.js"></script>
 
         </body>
 </html>
