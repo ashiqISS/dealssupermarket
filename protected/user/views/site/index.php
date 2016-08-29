@@ -86,7 +86,7 @@
                                                 <div class="zoom-img">
                                                         <a href="#"><img class="img-responsive bod" src="<?php echo Yii::app()->baseUrl; ?>/uploads/products/1000/<?php echo $pdtbanners->id; ?>/special.<?php echo $pdtbanners->special_product_image; ?>"></a>
                                                 </div>
-                                                <a class="now" href="<?php echo Yii::app()->baseUrl; ?>/products/category/name/<?php echo $pdtbanners->canonical_name; ?>">Shop Now<i class="fa arr fa-angle-right"></i></a>
+                                                <a class="now" href="<?php echo Yii::app()->baseUrl; ?>/products/detail/name/<?php echo $pdtbanners->canonical_name; ?>">Shop Now<i class="fa arr fa-angle-right"></i></a>
                                         </div>
                                 </div>
                                 <?php
@@ -164,10 +164,10 @@
                                                                 <div class="lak">
                                                                         <a href="#">  <img class="img-responsive our" src="<?php echo Yii::app()->baseUrl; ?>/uploads/products/1000/<?php echo $pops->id; ?>/big.<?php echo $pops->main_image; ?>"> </a>
                                                                         <div class="cart-img">
-                                                                                <h3><a class="title_1" href="#"><?php echo $pops->product_name; ?></a></h3>
+                                                                                <h3><a class="title_1" href="<?php echo Yii::app()->baseUrl; ?>/products/detail/name/<?php echo $pops->canonical_name; ?>"><?php echo $pops->product_name; ?></a></h3>
                                                                                 <h4><a class="title_2" href="#">AED :
                                                                                                 <?php
-                                                                                                if (($_SESSION['location']) && ($_SESSION['location'] == 'MARINA')) {
+                                                                                                if ((Yii::app()->session['location']) && (Yii::app()->session['location'] == 'MARINA')) {
 
                                                                                                         echo $pops->price_in_marina;
                                                                                                 } else {
@@ -220,9 +220,9 @@
                                                                 <div class="lak">
                                                                         <a href="#"> <img class="img-responsive our" src="<?php echo Yii::app()->baseUrl; ?>/uploads/products/1000/<?php echo $fets->id; ?>/big.<?php echo $fets->main_image; ?>"></a>
                                                                         <div class="cart-img">
-                                                                                <h3><a class="title_1" href="#"><?php echo $fets->product_name; ?></a></h3>
+                                                                                <h3><a class="title_1" href="<?php echo Yii::app()->baseUrl; ?>/products/detail/name/<?php echo $fets->canonical_name; ?>"><?php echo $fets->product_name; ?></a></h3>
                                                                                 <h4><a class="title_2" href="#">AED : <?php
-                                                                                                if (($_SESSION['location']) && ($_SESSION['location'] == 'MARINA')) {
+                                                                                                if ((Yii::app()->session['location']) && (Yii::app()->session['location'] == 'MARINA')) {
 
                                                                                                         echo $fets->price_in_marina;
                                                                                                 } else {
@@ -279,7 +279,7 @@
                                                                         <div class="cart-img">
                                                                                 <h3><a class="title_1" href="<?php echo Yii::app()->baseUrl; ?>/products/detail/name/<?php echo $pcats1->canonical_name; ?>"><?php echo $pcats1->product_name; ?></a></h3>
                                                                                 <h4><a class="title_2" href="#">AED : <?php
-                                                                                                if (($_SESSION['location']) && ($_SESSION['location'] == 'MARINA')) {
+                                                                                                if ((Yii::app()->session['location']) && (Yii::app()->session['location'] == 'MARINA')) {
 
                                                                                                         echo $pcats1->price_in_marina;
                                                                                                 } else {
@@ -329,9 +329,9 @@
                                                                         <div class="lak">
                                                                                 <img class="img-responsive our" src="<?php echo Yii::app()->baseUrl; ?>/uploads/products/1000/<?php echo $pcats2->id; ?>/big.<?php echo $pcats2->main_image; ?>">
                                                                                 <div class="cart-img">
-                                                                                        <h3><a class="title_1" href="#"><?php echo $pcats2->product_name; ?></a></h3>
+                                                                                        <h3><a class="title_1" href="<?php echo Yii::app()->baseUrl; ?>/products/detail/name/<?php echo $pcats2->canonical_name; ?>"><?php echo $pcats2->product_name; ?></a></h3>
                                                                                         <h4><a class="title_2" href="#">AED : <?php
-                                                                                                        if (($_SESSION['location']) && ($_SESSION['location'] == 'MARINA')) {
+                                                                                                        if ((Yii::app()->session['location']) && (Yii::app()->session['location'] == 'MARINA')) {
 
                                                                                                                 echo $pcats2->price_in_marina;
                                                                                                         } else {
